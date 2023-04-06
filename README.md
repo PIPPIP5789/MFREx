@@ -1,6 +1,6 @@
 # MineFantasy: Reforged Extras
 
-In order to use this mod, simply load it alongside MineFantasy: Reforged, then add your JSON files to the config to add the recipe into the game. A sample JSON file for each config is listed below.
+In order to use this mod, simply load it alongside MineFantasy: Reforged, then add your JSON files to the proper config file (i.e., an Anvil recipe would go into MineFantasyReforged/custom/recipes/anvil_recipes/) to add the recipes or registries into the game. A sample JSON file for each config is listed below.
 
 ## Anvil
 
