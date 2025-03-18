@@ -2,6 +2,7 @@ package com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.init;
 
 import charcoalPit.blocks.BlockCeramicPot;
 import charcoalPit.blocks.BlockPotteryKiln;
+import charcoalPit.items.ItemsRegistry;
 import charcoalPit.tile.TileCeramicPot;
 import charcoalPit.tile.TileClayPot;
 import com.PIPPIP5789.mfrex.core.util.RecipeIniter;
@@ -28,6 +29,11 @@ public class PitsOfCharcoalFantasyRecipeInit extends RecipeIniter {
 
     public static void removeOldRecipes() {
         mfrRemoveRecipes(BlocksRegistry.thatch);
+        mfrRemoveRecipes(ItemsRegistry.clayPot);
+        mfrRemoveRecipes(ItemsRegistry.clay_Pot);
+        mfrRemoveRecipes(Item.getItemFromBlock(BlocksRegistry.reinforcedBrick));
+        mfrRemoveRecipes(Item.getItemFromBlock(BlocksRegistry.clayPot));
+        mfrRemoveRecipes(Item.getItemFromBlock(BlocksRegistry.hatch));
         /*CraftingManagerCarpenter.getRecipes().add(new CarpenterShapedRecipe(
                 new ItemStack(Blocks.AIR, 1),
                 CraftingManagerCarpenter.getRecipeByName("bloomery", true).getIngredients(),

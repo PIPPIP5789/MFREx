@@ -1,0 +1,6 @@
+﻿{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "mfrex:items/rusticated_persimmon_jam_roll"
+    }
+}

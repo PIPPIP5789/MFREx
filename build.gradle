@@ -183,6 +183,15 @@ dependencies {
         runtimeOnly fg.deobf("curse.maven:biomes-o-plenty-220318:3558882")
         runtimeOnly fg.deobf("curse.maven:rusticated-fruit-547435:3533340")
     }
+
+    compileOnly fg.deobf("curse.maven:pyrotech-306676:4132140")
+    compileOnly fg.deobf("curse.maven:athenaeum-284350:4633750")
+    compileOnly fg.deobf("curse.maven:dropt-284973:5405050")
+    if (project.debug_pyrotech.toBoolean()) {
+        runtimeOnly fg.deobf("curse.maven:pyrotech-306676:4132140");
+        runtimeOnly fg.deobf("curse.maven:athenaeum-284350:4633750")
+        runtimeOnly fg.deobf("curse.maven:dropt-284973:5405050")
+    }
 }
 
 fancyGradle {

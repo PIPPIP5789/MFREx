@@ -10,7 +10,7 @@
   "sound": "minecraft:block.wood.hit",
   "dirty_progress_amount": 5,
   "pattern": [
-    "C"
+    "CC"
   ],
   "key": {
     "C": {
@@ -18,6 +18,7 @@
     }
   },
   "result": {
-    "item": "betterwithmods:kibble"
+    "item": "betterwithmods:kibble",
+    "count": 2
   }
 }

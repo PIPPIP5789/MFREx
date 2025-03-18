@@ -1,25 +1,31 @@
 package com.PIPPIP5789.mfrex.core;
 
 import betterwithmods.BWMod;
-import charcoalPit.CharcoalPit;
+import betterwithmods.common.blocks.BlockUnfiredPottery;
+import betterwithmods.common.blocks.mechanical.tile.TileEntityCauldron;
 import com.PIPPIP5789.mfrex.animaniafantasy.AnimaniaFantasyModule;
 import com.PIPPIP5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
+import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExRecipeInit;
+import com.PIPPIP5789.mfrex.core.util.EventHandler;
+import com.PIPPIP5789.mfrex.core.util.FoodBonus;
 import com.PIPPIP5789.mfrex.fantasy_corn.FantasyCornModule;
 import com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.PitsOfCharcoalFantasyModule;
-import com.PIPPIP5789.mfrex.rusticatedefantasy.RusticatedFantasyModule;
+import com.PIPPIP5789.mfrex.pyrofantasy.PyroFantasyModule;
+import com.PIPPIP5789.mfrex.rusticatedfantasy.RusticatedFantasyModule;
 import com.PIPPIP5789.mfrex.rusticfantasy.RusticFantasyModule;
 import com.animania.Animania;
+import com.codetaylor.mc.pyrotech.ModPyrotech;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import minefantasy.mfr.MineFantasyReforged;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import nihiltres.rusticatedfruit.RusticatedFruit;
 import panda.corn.SimpleCorn;
 import rustic.core.Rustic;
 
@@ -45,6 +51,9 @@ public class MFREx {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new EventHandler());
+
+        MFRExBlockInit.initBlocks();
         MFRExItemInit.initItems();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
@@ -57,7 +66,7 @@ public class MFREx {
             AnimaniaFantasyModule.preInit(event);
         }
         if(Loader.isModLoaded(BWMod.MODID)) {
-            //BetterWithFantasyModule.preInit(event);
+            BetterWithFantasyModule.preInit(event);
         }
         if(Loader.isModLoaded(ModSpartanWeaponry.ID)) {
             //SpartanFantasyModule.preInit(event);
@@ -67,6 +76,9 @@ public class MFREx {
         }
         if(Loader.isModLoaded("rusticatedfruits")) {
             RusticatedFantasyModule.preInit(event);
+        }
+        if(Loader.isModLoaded(ModPyrotech.MOD_ID)) {
+            PyroFantasyModule.preInit(event);
         }
     }
 
@@ -85,11 +97,17 @@ public class MFREx {
         if(Loader.isModLoaded(Animania.MODID)) {
             AnimaniaFantasyModule.init(event);
         }
+        if(Loader.isModLoaded(BWMod.MODID)) {
+            BetterWithFantasyModule.init(event);
+        }
         if(Loader.isModLoaded(ModSpartanWeaponry.ID)) {
             //SpartanFantasyModule.init(event);
         }
         if(Loader.isModLoaded("rusticatedfruits")) {
             RusticatedFantasyModule.init(event);
+        }
+        if(Loader.isModLoaded(ModPyrotech.MOD_ID)) {
+            PyroFantasyModule.init(event);
         }
     }
 
@@ -106,6 +124,9 @@ public class MFREx {
         if(Loader.isModLoaded(Animania.MODID)) {
             AnimaniaFantasyModule.postInit(event);
         }
+        if(Loader.isModLoaded(BWMod.MODID)) {
+            BetterWithFantasyModule.postInit(event);
+        }
         if(Loader.isModLoaded(ModSpartanWeaponry.ID)) {
             //SpartanFantasyModule.postInit(event);
         }
@@ -114,6 +135,9 @@ public class MFREx {
         }
         if(Loader.isModLoaded("rusticatedfruits")) {
             RusticatedFantasyModule.postInit(event);
+        }
+        if(Loader.isModLoaded(ModPyrotech.MOD_ID)) {
+            PyroFantasyModule.postInit(event);
         }
 
         /*System.out.println("Translator's Key: ");

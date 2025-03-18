@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "S S",
+    "CSC",
+    "CSC"
+  ],
+  "key":
+  {
+    "S":
+    {
+      "item": "pyrotech:material",
+      "data": 16
+    },
+    "C":
+    {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "result":
+  {
+    "item": "pyrotech:soaking_pot"
+  }
+}

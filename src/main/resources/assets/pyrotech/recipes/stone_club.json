@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    " R ",
+    " F ",
+    " S "
+  ],
+  "key":
+  {
+    "R":
+    {
+      "item": "pyrotech:rock",
+      "data": 0
+    },
+    "F":
+    {
+      "item": "pyrotech:material",
+      "data": 12
+    },
+    "S":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "minefantasyreforged:stone_mace"
+  }
+}

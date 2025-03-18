@@ -1,5 +1,8 @@
 package com.PIPPIP5789.mfrex.betterwithfantasy.init;
 
+import betterwithmods.common.BWMItems;
+import minefantasy.mfr.api.MineFantasyReforgedAPI;
+import minefantasy.mfr.api.stamina.CustomFoodEntry;
 import minefantasy.mfr.init.MineFantasyItems;
 import minefantasy.mfr.item.ItemFoodMFR;
 import minefantasy.mfr.item.ItemMultiFood;
@@ -17,7 +20,12 @@ public class BetterWithFantasyItemInit {
     public static Item fishDinner = Utils.nullValue();
 
     public static void initOreDict() throws ClassNotFoundException {
-        }
+    }
+
+    public static void initFoodValues() {
+        //CustomFoodEntry.registerItem(new ItemStack(BWMItems.BEEF_DINNER), );
+        //CustomFoodEntry.registerItem(new ItemStack(BWMItems.PORK_DINNER), );
+    }
 
     public static void initItems() {
         fishDinner = new ItemFoodMFR("fish_dinner", 5, 4,false);
@@ -28,7 +36,7 @@ public class BetterWithFantasyItemInit {
 
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        registry.register(fishDinner);
+        //registry.register(fishDinner);
     }
 
 }

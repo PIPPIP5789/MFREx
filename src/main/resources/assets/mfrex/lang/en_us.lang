@@ -1,3 +1,63 @@
+item.raw_strips_beef.name=Raw Beef Strips
+item.raw_strips_pork.name=Raw Pork Strips
+item.raw_strips_mutton.name=Raw Mutton Strips
+item.raw_strips_chicken.name=Raw Chicken Strips
+item.raw_strips_rabbit.name=Raw Rabbit Strips
+item.raw_strips_fish.name=Raw Fish Strips
+item.raw_strips_salmon.name=Raw Salmon Strips
+item.raw_strips_wolf.name=Raw Wolf Strips
+item.raw_strips_horse.name=Raw Horse Strips
+
+item.cooked_strips_beef.name=Cooked Beef Strips
+item.cooked_strips_pork.name=Cooked Pork Strips
+item.cooked_strips_mutton.name=Cooked Mutton Strips
+item.cooked_strips_chicken.name=Cooked Chicken Strips
+item.cooked_strips_rabbit.name=Cooked Rabbit Strips
+item.cooked_strips_fish.name=Cooked Fish Strips
+item.cooked_strips_salmon.name=Cooked Salmon Strips
+item.cooked_strips_wolf.name=Cooked Wolf Strips
+item.cooked_strips_horse.name=Cooked Horse Strips
+
+item.raw_chunks_beef.name=Raw Beef Chunks
+item.raw_chunks_pork.name=Raw Pork Chunks
+item.raw_chunks_mutton.name=Raw Mutton Chunks
+item.raw_chunks_chicken.name=Raw Chicken Chunks
+item.raw_chunks_rabbit.name=Raw Rabbit Chunks
+item.raw_chunks_fish.name=Raw Fish Chunks
+item.raw_chunks_salmon.name=Raw Salmon Chunks
+item.raw_chunks_wolf.name=Raw Wolf Chunks
+item.raw_chunks_horse.name=Raw Horse Chunks
+
+item.cooked_chunks_beef.name=Cooked Beef Chunks
+item.cooked_chunks_pork.name=Cooked Pork Chunks
+item.cooked_chunks_mutton.name=Cooked Mutton Chunks
+item.cooked_chunks_chicken.name=Cooked Chicken Chunks
+item.cooked_chunks_rabbit.name=Cooked Rabbit Chunks
+item.cooked_chunks_fish.name=Cooked Fish Chunks
+item.cooked_chunks_salmon.name=Cooked Salmon Chunks
+item.cooked_chunks_wolf.name=Cooked Wolf Chunks
+item.cooked_chunks_horse.name=Cooked Horse Chunks
+
+item.raw_mince_beef.name=Raw Beef Mince
+item.raw_mince_pork.name=Raw Pork Mince
+item.raw_mince_mutton.name=Raw Mutton Mince
+item.raw_mince_chicken.name=Raw Chicken Mince
+item.raw_mince_rabbit.name=Raw Rabbit Mince
+item.raw_mince_fish.name=Raw Fish Mince
+item.raw_mince_salmon.name=Raw Salmon Mince
+item.raw_mince_wolf.name=Raw Wolf Mince
+item.raw_mince_horse.name=Raw Horse Mince
+
+item.cooked_mince_beef.name=Cooked Beef Mince
+item.cooked_mince_pork.name=Cooked Pork Mince
+item.cooked_mince_mutton.name=Cooked Mutton Mince
+item.cooked_mince_chicken.name=Cooked Chicken Mince
+item.cooked_mince_rabbit.name=Cooked Rabbit Mince
+item.cooked_mince_fish.name=Cooked Fish Mince
+item.cooked_mince_salmon.name=Cooked Salmon Mince
+item.cooked_mince_wolf.name=Cooked Wolf Mince
+item.cooked_mince_horse.name=Cooked Horse Mince
+
 item.pottage.name=Pottage
 item.jam_jar.name=Jam Jar
 item.jam_apple.name=Apple Jam
@@ -28,13 +88,22 @@ item.jam_persimmon_roll.name=Persimmon Jam Roll
 
 item.fish_dinner.name=Fish Dinner
 
+tooltype.masonry_bench=Masonry Bench
+integration.jei.category.mfrex:masonry_bench=MineFantasy Masonry Bench
+tile.masonry_bench.name=Masonry Bench
+method.masonry_bench=Masonry Bench
+
 item.rustic.beeswax.name=Testing Name
 
 tile.bloomery.name=Empty Stone Shell
 block.charcoal_pit.name=Straw Thatch
 
+block.betterwithaddons:wrought_bars:0.name=Pig Iron Bars
+
 item.bwm:material.hellfire_dust.name=Netherack Dust
 item.bwm:material.concentrated_hellfire.name=Netherforged Steel Ingot
+tile.bwm:cooking_pot:0.name=Melting Pot
+tile.bwm:cooking_pot:1.name=Cooking Cauldron
 
 material.mfrex:black_steel=Black Steel
 material.mfrex:black_steel_ingot=Black Steel

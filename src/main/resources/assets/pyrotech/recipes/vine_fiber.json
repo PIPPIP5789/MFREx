@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "V"
+  ],
+  "key":
+  {
+    "V":
+    {
+      "item": "minefantasyreforged:vine"
+    }
+  },
+  "result":
+  {
+    "item": "pyrotech:material",
+    "data": 12
+  }
+}

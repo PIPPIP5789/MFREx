@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -21,11 +22,12 @@ public class PitsOfCharcoalFantasyBlockInit {
     public static BlockCreosoteCollector firebrickCreosoteCollector;
 
     public static void initBlocks() {
-        firebrickCreosoteCollector = new BlockCreosoteCollector("firebrick_creosote_collector", true);
+        //firebrickCreosoteCollector = new BlockCreosoteCollector("firebrick_creosote_collector", true);
+        //firebrickCreosoteCollector.setCreativeTab(CreativeTabs.DECORATIONS);
     }
 
     public static void register(RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(firebrickCreosoteCollector);
+        //event.getRegistry().register(firebrickCreosoteCollector);
     }
 
 }

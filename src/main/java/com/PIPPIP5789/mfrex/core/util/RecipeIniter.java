@@ -1,5 +1,8 @@
 package com.PIPPIP5789.mfrex.core.util;
 
+import betterwithmods.BWMod;
+import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyRecipeInit;
+import com.PIPPIP5789.mfrex.core.MFREx;
 import com.google.common.collect.Lists;
 import minefantasy.mfr.recipe.DummyRecipe;
 import net.minecraft.block.Block;
@@ -7,7 +10,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -16,7 +24,16 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
 
+@GameRegistry.ObjectHolder(MFREx.MODID)
+@Mod.EventBusSubscriber(modid = MFREx.MODID)
 public abstract class RecipeIniter {
+
+    @SubscribeEvent
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+        if(Loader.isModLoaded(BWMod.MODID)) {
+            BetterWithFantasyRecipeInit.registerBWMRecipes();
+        }
+    }
 
     //To be used on stubborn recipes that don't get removed by just calling .remove
     protected static void manualRemover(Item item) {

@@ -2,6 +2,7 @@ package com.PIPPIP5789.mfrex.core.util;
 
 import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
 import com.PIPPIP5789.mfrex.core.MFREx;
+import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
 import com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.init.PitsOfCharcoalFantasyBlockInit;
 import com.PIPPIP5789.mfrex.rusticfantasy.init.RusticFantasyItemInit;
@@ -20,6 +21,8 @@ public class BlockIniter {
 
     @SubscribeEvent
     public static void register(RegistryEvent.Register<Block> event) {
+        MFRExBlockInit.register(event);
+
         if(Loader.isModLoaded("charcoal_pit")) {
             PitsOfCharcoalFantasyBlockInit.register(event);
         }
