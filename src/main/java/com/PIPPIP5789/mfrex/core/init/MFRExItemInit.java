@@ -16,7 +16,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class MFRExItemInit {
 
-    public static Item rawBeefStrips = Utils.nullValue();
+    /*public static Item rawBeefStrips = Utils.nullValue();
     public static Item cookedBeefStrips = Utils.nullValue();
     public static Item rawPorkStrips = Utils.nullValue();
     public static Item cookedPorkStrips = Utils.nullValue();
@@ -71,7 +71,7 @@ public class MFRExItemInit {
     public static Item rawWolfMince = Utils.nullValue();
     public static Item cookedWolfMince = Utils.nullValue();
     public static Item rawHorseMince = Utils.nullValue();
-    public static Item cookedHorseMince = Utils.nullValue();
+    public static Item cookedHorseMince = Utils.nullValue();*/
 
     public static Item sandwich = Utils.nullValue();
     public static Item sandwichBig = Utils.nullValue();
@@ -92,7 +92,7 @@ public class MFRExItemInit {
     }
 
     public static void initItems() {
-        rawBeefStrips = new ItemFoodMFR("raw_strips_beef", 2, 0.2F, true);
+        /*rawBeefStrips = new ItemFoodMFR("raw_strips_beef", 2, 0.2F, true);
         cookedBeefStrips = new ItemFoodMFR("cooked_strips_beef", 5, 0.5F, true);
         rawPorkStrips = new ItemFoodMFR("raw_strips_pork", 2, 0.2F, true);
         cookedPorkStrips = new ItemFoodMFR("cooked_strips_pork", 5, 0.5F, true);
@@ -148,7 +148,7 @@ public class MFRExItemInit {
         cookedWolfMince = new ItemFoodMFR("cooked_mince_wolf", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);
         rawHorseMince = new ItemFoodMFR("raw_mince_horse", 2, 0.2F, true).setContainerItem(MineFantasyItems.CLAY_POT);
         cookedHorseMince = new ItemFoodMFR("cooked_mince_horse", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);
-
+*/
         //beefSandwich = new ItemFoodMFR("raw_mince_beef", 2, 0.2F, true).setContainerItem(MineFantasyItems.CLAY_POT);
         //beefSandwichBig = new ItemFoodMFR("cooked_mince_beef", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);
 
@@ -173,7 +173,7 @@ public class MFRExItemInit {
 
         //registry.register(new ItemBlockBase(MFRExBlockInit.masonryBench));
 
-        registry.register(rawBeefStrips);
+        /*registry.register(rawBeefStrips);
         registry.register(cookedBeefStrips);
         registry.register(rawPorkStrips);
         registry.register(cookedPorkStrips);
@@ -228,7 +228,7 @@ public class MFRExItemInit {
         registry.register(rawWolfMince);
         registry.register(cookedWolfMince);
         registry.register(rawHorseMince);
-        registry.register(cookedHorseMince);
+        registry.register(cookedHorseMince);*/
 
         registry.register(appleJam);
         registry.register(berryJam);

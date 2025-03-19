@@ -1,11 +1,9 @@
 package com.PIPPIP5789.mfrex.core.util;
 
-import charcoalPit.CharcoalPit;
 import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
 import com.PIPPIP5789.mfrex.core.MFREx;
 import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
 import com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.init.PitsOfCharcoalFantasyItemInit;
-import com.PIPPIP5789.mfrex.rusticfantasy.RusticFantasyModule;
 import com.PIPPIP5789.mfrex.rusticfantasy.init.RusticFantasyItemInit;
 import com.PIPPIP5789.mfrex.spartanfantasy.init.SpartanFantasyItemInit;
 import net.minecraft.item.Item;

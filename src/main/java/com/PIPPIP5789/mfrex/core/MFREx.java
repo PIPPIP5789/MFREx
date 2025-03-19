@@ -1,15 +1,12 @@
 package com.PIPPIP5789.mfrex.core;
 
 import betterwithmods.BWMod;
-import betterwithmods.common.blocks.BlockUnfiredPottery;
-import betterwithmods.common.blocks.mechanical.tile.TileEntityCauldron;
 import com.PIPPIP5789.mfrex.animaniafantasy.AnimaniaFantasyModule;
 import com.PIPPIP5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
 import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExRecipeInit;
 import com.PIPPIP5789.mfrex.core.util.EventHandler;
-import com.PIPPIP5789.mfrex.core.util.FoodBonus;
 import com.PIPPIP5789.mfrex.fantasy_corn.FantasyCornModule;
 import com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.PitsOfCharcoalFantasyModule;
 import com.PIPPIP5789.mfrex.pyrofantasy.PyroFantasyModule;
@@ -19,7 +16,6 @@ import com.animania.Animania;
 import com.codetaylor.mc.pyrotech.ModPyrotech;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
 import minefantasy.mfr.MineFantasyReforged;
-import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;

@@ -20,8 +20,8 @@ public class EventHandler {
 
     @SubscribeEvent
     public void onAttack(LivingAttackEvent event) {
-        ItemStack stack = event.getEntityLiving().getActiveItemStack();
-        NBTTagCompound tag = ItemNBTFood.getNBT(stack, true, "test_tag");
+        //ItemStack stack = event.getEntityLiving().getActiveItemStack();
+        //NBTTagCompound tag = ItemNBTFood.getNBT(stack, true, "test_tag");
         //System.out.println("Waka Tag -> " + tag);
     }
 
