@@ -3,7 +3,6 @@ package com.PIPPIP5789.mfrex.betterwithfantasy;
 import betterwithmods.common.registry.block.recipe.StateIngredient;
 import betterwithmods.common.registry.heat.BWMHeatRegistry;
 import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
-import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyRecipeInit;
 import com.google.common.collect.Lists;
 import minefantasy.mfr.init.MineFantasyBlocks;
 import net.minecraft.block.properties.PropertyBool;
@@ -30,7 +29,7 @@ public class BetterWithFantasyModule {
     }
 
     public static void postInit(FMLPostInitializationEvent event) {
-        BetterWithFantasyRecipeInit.unregisterUnusedRecipes();
+        //BetterWithFantasyRecipeInit.unregisterUnusedRecipes();
     }
 
     private static void initHeatSources(FMLInitializationEvent event) {

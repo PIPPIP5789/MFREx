@@ -1,14 +1,11 @@
 package com.PIPPIP5789.mfrex.core;
 
 import betterwithmods.BWMod;
-import com.PIPPIP5789.mfrex.animaniafantasy.AnimaniaFantasyModule;
 import com.PIPPIP5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
 import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
 import com.PIPPIP5789.mfrex.core.init.MFRExRecipeInit;
 import com.PIPPIP5789.mfrex.core.util.EventHandler;
-import com.PIPPIP5789.mfrex.fantasy_corn.FantasyCornModule;
-import com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.PitsOfCharcoalFantasyModule;
 import com.PIPPIP5789.mfrex.pyrofantasy.PyroFantasyModule;
 import com.PIPPIP5789.mfrex.rusticatedfantasy.RusticatedFantasyModule;
 import com.PIPPIP5789.mfrex.rusticfantasy.RusticFantasyModule;
@@ -32,7 +29,7 @@ import rustic.core.Rustic;
 
  */
 
-@Mod(modid = MFREx.MODID, name = MFREx.NAME, version = MFREx.VERSION, dependencies = "after:" + MineFantasyReforged.MOD_ID + ";after:" + SimpleCorn.MODID + ";after:" + Rustic.MODID + ";after:" + BWMod.MODID + ";after:" + ModSpartanWeaponry.ID + ";after:" + Animania.MODID)
+@Mod(modid = MFREx.MODID, name = MFREx.NAME, version = MFREx.VERSION, dependencies = "after:" + MineFantasyReforged.MOD_ID + BWMod.MODID + ";after:" + ModSpartanWeaponry.ID + ";after:" + Animania.MODID + ";after:" + ModPyrotech.MOD_ID)
 public class MFREx {
     public static final String MODID = "mfrex";
     public static final String NAME = "MFREx";
@@ -53,13 +50,13 @@ public class MFREx {
         MFRExItemInit.initItems();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
-            FantasyCornModule.preInit(event);
+            //FantasyCornModule.preInit(event);
         }
         if(Loader.isModLoaded(Rustic.MODID)) {
             RusticFantasyModule.preInit(event);
         }
         if(Loader.isModLoaded(Animania.MODID)) {
-            AnimaniaFantasyModule.preInit(event);
+            //AnimaniaFantasyModule.preInit(event);
         }
         if(Loader.isModLoaded(BWMod.MODID)) {
             BetterWithFantasyModule.preInit(event);
@@ -68,7 +65,7 @@ public class MFREx {
             //SpartanFantasyModule.preInit(event);
         }
         if(Loader.isModLoaded("charcoal_pit")) {
-            PitsOfCharcoalFantasyModule.preInit(event);
+            //PitsOfCharcoalFantasyModule.preInit(event);
         }
         if(Loader.isModLoaded("rusticatedfruits")) {
             RusticatedFantasyModule.preInit(event);
@@ -85,13 +82,13 @@ public class MFREx {
         MFRExItemInit.initOreDict();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
-            FantasyCornModule.init(event);
+            //FantasyCornModule.init(event);
         }
         if(Loader.isModLoaded(Rustic.MODID)) {
             RusticFantasyModule.init(event);
         }
         if(Loader.isModLoaded(Animania.MODID)) {
-            AnimaniaFantasyModule.init(event);
+            //AnimaniaFantasyModule.init(event);
         }
         if(Loader.isModLoaded(BWMod.MODID)) {
             BetterWithFantasyModule.init(event);
@@ -112,13 +109,13 @@ public class MFREx {
         MFRExRecipeInit.removeOldRecipes();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
-            FantasyCornModule.postInit(event);
+            //FantasyCornModule.postInit(event);
         }
         if(Loader.isModLoaded(Rustic.MODID)) {
             RusticFantasyModule.postInit(event);
         }
         if(Loader.isModLoaded(Animania.MODID)) {
-            AnimaniaFantasyModule.postInit(event);
+            //AnimaniaFantasyModule.postInit(event);
         }
         if(Loader.isModLoaded(BWMod.MODID)) {
             BetterWithFantasyModule.postInit(event);
@@ -127,7 +124,7 @@ public class MFREx {
             //SpartanFantasyModule.postInit(event);
         }
         if(Loader.isModLoaded("charcoal_pit")) {
-            PitsOfCharcoalFantasyModule.postInit(event);
+            //PitsOfCharcoalFantasyModule.postInit(event);
         }
         if(Loader.isModLoaded("rusticatedfruits")) {
             RusticatedFantasyModule.postInit(event);

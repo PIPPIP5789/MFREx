@@ -1,6 +1,7 @@
 package com.PIPPIP5789.mfrex.mixin;
 
 import betterwithmods.common.blocks.mechanical.BlockBellows;
+import com.oblivioussp.spartanweaponry.item.ItemLongbow;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BlockBellows.class)
 public abstract class MixinBWEBellows {
 
-    @Shadow public abstract EnumFacing getFacing(IBlockState state);
+    /*@Shadow public abstract EnumFacing getFacing(IBlockState state);
 
     @Inject(method = "stokeFlames", at = @At("HEAD"), remap = false)
     public void stokeFlames(World world, BlockPos pos, CallbackInfo ci) {
@@ -35,7 +36,7 @@ public abstract class MixinBWEBellows {
             }
         }
         catch(ClassCastException e) {}
-    }
+    }*/
 
 }
 

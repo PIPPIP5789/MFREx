@@ -169,7 +169,7 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:spartan-weaponry-278141:5564836")
     if (project.debug_spartanweaponry.toBoolean()) {
-        //runtimeOnly fg.deobf("curse.maven:spartan-weaponry-278141:5564836")
+        runtimeOnly fg.deobf("curse.maven:spartan-weaponry-278141:5564836")
     }
 
     compileOnly fg.deobf("curse.maven:charcoal-pit-264111:2615892")

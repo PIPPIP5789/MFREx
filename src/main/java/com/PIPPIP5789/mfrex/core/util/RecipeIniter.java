@@ -1,7 +1,6 @@
 package com.PIPPIP5789.mfrex.core.util;
 
 import betterwithmods.BWMod;
-import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyRecipeInit;
 import com.PIPPIP5789.mfrex.core.MFREx;
 import com.google.common.collect.Lists;
 import minefantasy.mfr.recipe.DummyRecipe;
@@ -31,7 +30,7 @@ public abstract class RecipeIniter {
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         if(Loader.isModLoaded(BWMod.MODID)) {
-            BetterWithFantasyRecipeInit.registerBWMRecipes();
+            //BetterWithFantasyRecipeInit.registerBWMRecipes();
         }
     }
 

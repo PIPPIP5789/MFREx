@@ -2,7 +2,6 @@ package com.PIPPIP5789.mfrex.core.util;
 
 import com.PIPPIP5789.mfrex.core.MFREx;
 import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
-import com.PIPPIP5789.mfrex.pits_of_fantasy_charcoal.init.PitsOfCharcoalFantasyBlockInit;
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
@@ -19,7 +18,7 @@ public class BlockIniter {
         MFRExBlockInit.register(event);
 
         if(Loader.isModLoaded("charcoal_pit")) {
-            PitsOfCharcoalFantasyBlockInit.register(event);
+            //PitsOfCharcoalFantasyBlockInit.register(event);
         }
     }
 
