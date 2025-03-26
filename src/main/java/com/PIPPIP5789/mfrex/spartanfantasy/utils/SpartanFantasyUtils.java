@@ -1,8 +1,7 @@
-package com.PIPPIP5789.mfrex.spartanfantasy.utils;
+package com.pippip5789.mfrex.spartanfantasy.utils;
 
-import com.PIPPIP5789.mfrex.core.MFREx;
+import com.pippip5789.mfrex.core.MFREx;
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
-import minefantasy.mfr.init.MineFantasyItems;
 import net.minecraft.item.Item;
 import org.apache.commons.lang3.StringUtils;
 

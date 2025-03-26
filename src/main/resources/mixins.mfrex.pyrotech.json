@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.pippip5789.mfrex.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.minefantasyreforged.refmap.json",
+  "mixins": [
+    "MixinMFRItemTongs"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}

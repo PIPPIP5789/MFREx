@@ -1,7 +1,7 @@
-package com.PIPPIP5789.mfrex.core.util;
+package com.pippip5789.mfrex.core.util;
 
 import betterwithmods.BWMod;
-import com.PIPPIP5789.mfrex.core.MFREx;
+import com.pippip5789.mfrex.core.MFREx;
 import com.google.common.collect.Lists;
 import minefantasy.mfr.recipe.DummyRecipe;
 import net.minecraft.block.Block;

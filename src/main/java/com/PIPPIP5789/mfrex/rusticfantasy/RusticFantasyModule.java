@@ -1,6 +1,6 @@
-package com.PIPPIP5789.mfrex.rusticfantasy;
+package com.pippip5789.mfrex.rusticfantasy;
 
-import com.PIPPIP5789.mfrex.rusticfantasy.init.RusticFantasyItemInit;
+import com.pippip5789.mfrex.rusticfantasy.init.RusticFantasyItemInit;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

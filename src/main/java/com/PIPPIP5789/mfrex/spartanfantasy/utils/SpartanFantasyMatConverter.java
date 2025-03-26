@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.spartanfantasy.utils;
+package com.pippip5789.mfrex.spartanfantasy.utils;
 
 import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 

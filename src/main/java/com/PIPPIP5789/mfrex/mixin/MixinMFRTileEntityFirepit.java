@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import betterwithmods.BWMod;
 import betterwithmods.common.blocks.mechanical.BlockBellows;
@@ -37,7 +37,7 @@ public class MixinMFRTileEntityFirepit extends TileEntity {
             if ((tile instanceof IHeatUser && ((IHeatUser) tile).canAccept(this))) returnVal = true;
 
             cir.setReturnValue(returnVal);
-            cir.cancel();
+            
         }
     }
 

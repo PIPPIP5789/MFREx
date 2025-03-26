@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.pyrotech.modules.ignition.item.ItemIgniterBase;
 import minefantasy.mfr.api.tool.ILighter;
@@ -61,7 +61,7 @@ public abstract class MixinMFRBlockFirepit extends BlockTileEntity<TileEntityFir
                     }
 
                     cir.setReturnValue(true);
-                    cir.cancel();
+                    
                 }
 
                 if (burning) {
@@ -80,7 +80,7 @@ public abstract class MixinMFRBlockFirepit extends BlockTileEntity<TileEntityFir
                     }
 
                     cir.setReturnValue(true);
-                    cir.cancel();
+                    
                 }
 
                 if (firepit.fuel > 0) {
@@ -95,7 +95,7 @@ public abstract class MixinMFRBlockFirepit extends BlockTileEntity<TileEntityFir
                             }
 
                             cir.setReturnValue(true);
-                            cir.cancel();
+                            
                         }
                     }
 
@@ -110,7 +110,7 @@ public abstract class MixinMFRBlockFirepit extends BlockTileEntity<TileEntityFir
                         }
 
                         cir.setReturnValue(true);
-                        cir.cancel();
+                        
                     }
 
                     if (held.getItem() instanceof ItemFlintAndSteel) {
@@ -122,14 +122,14 @@ public abstract class MixinMFRBlockFirepit extends BlockTileEntity<TileEntityFir
                         }
 
                         cir.setReturnValue(true);
-                        cir.cancel();
+                        
                     }
                 }
             }
         }
 
         cir.setReturnValue(super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ));
-        cir.cancel();
+        
     }*/
 
 }

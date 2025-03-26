@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import betterwithmods.common.blocks.mechanical.tile.TileEntityCookingPot;
 import net.minecraft.block.state.IBlockState;

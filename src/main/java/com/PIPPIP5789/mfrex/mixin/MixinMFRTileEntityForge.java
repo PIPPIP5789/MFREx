@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import betterwithmods.BWMod;
 import betterwithmods.common.BWMBlocks;
@@ -36,7 +36,7 @@ public class MixinMFRTileEntityForge extends TileEntity {
             if ((tile instanceof IHeatUser && ((IHeatUser) tile).canAccept(this))) returnVal = true;
 
             cir.setReturnValue(returnVal);
-            cir.cancel();
+            
         }
     }
 
@@ -47,15 +47,15 @@ public class MixinMFRTileEntityForge extends TileEntity {
         if(Loader.isModLoaded(BWMod.MODID)) {
             if (under.getBlock() instanceof BlockFireStoked) {
                 cir.setReturnValue(700.0F);
-                cir.cancel();
+                
             }
             else if (under.getMaterial() == Material.FIRE) {
                 cir.setReturnValue(50.0F);
-                cir.cancel();
+                
             }
             else {
                 cir.setReturnValue(under.getMaterial() == Material.LAVA ? 100.0F : 0.0F);
-                cir.cancel();
+                
             }
         }
     }

@@ -1,6 +1,6 @@
-package com.PIPPIP5789.mfrex.spartanfantasy.init;
+package com.pippip5789.mfrex.spartanfantasy.init;
 
-import com.PIPPIP5789.mfrex.core.util.RecipeIniter;
+import com.pippip5789.mfrex.core.util.RecipeIniter;
 
 public class SpartanFantasyRecipeInit extends RecipeIniter {
 

@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.pyrotech.modules.tech.bloomery.ModuleTechBloomery;
 import com.codetaylor.mc.pyrotech.modules.tech.bloomery.block.BlockBloom;
@@ -49,11 +49,9 @@ public abstract class MixinMFRTongsHelper {
             nbt.setTag("Saved", save);
 
             cir.setReturnValue(true);
-            cir.cancel();
         }
         else {
             cir.setReturnValue(false);
-            cir.cancel();
         }
     }
 
@@ -65,7 +63,7 @@ public abstract class MixinMFRTongsHelper {
             else
                 cir.setReturnValue(item.getItem() instanceof IHotItem ? ((IHotItem) item.getItem()).isHot(item) : false);
         }
-        cir.cancel();
+        
     }*/
 
 }

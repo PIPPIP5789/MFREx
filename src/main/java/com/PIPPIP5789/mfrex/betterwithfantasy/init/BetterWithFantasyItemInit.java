@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.betterwithfantasy.init;
+package com.pippip5789.mfrex.betterwithfantasy.init;
 
 import betterwithmods.common.BWMItems;
 import minefantasy.mfr.api.MineFantasyReforgedAPI;

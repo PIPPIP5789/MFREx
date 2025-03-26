@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit;
 import com.codetaylor.mc.pyrotech.modules.tech.machine.block.spi.BlockCombustionWorkerStoneBase;
@@ -30,7 +30,7 @@ public abstract class MixinPyrotechBlockKilnPit {
             if(use > 0) {
                 igniteWithAdjacentIgniterBlock(world, pos, state, facing);
                 cir.setReturnValue(false);
-                cir.cancel();
+                
             }
         }
     }

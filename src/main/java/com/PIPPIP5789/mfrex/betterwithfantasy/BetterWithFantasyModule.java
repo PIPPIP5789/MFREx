@@ -1,8 +1,8 @@
-package com.PIPPIP5789.mfrex.betterwithfantasy;
+package com.pippip5789.mfrex.betterwithfantasy;
 
 import betterwithmods.common.registry.block.recipe.StateIngredient;
 import betterwithmods.common.registry.heat.BWMHeatRegistry;
-import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
+import com.pippip5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
 import com.google.common.collect.Lists;
 import minefantasy.mfr.init.MineFantasyBlocks;
 import net.minecraft.block.properties.PropertyBool;

@@ -270,13 +270,13 @@ jar {
     manifest {
         attributes([
                 "Specification-Title": archivesBaseName,
-                "Specification-Vendor": "PIPPIP5789",
+                "Specification-Vendor": "pippip5789",
                 "Specification-Version": "1", // We are version 1 of ourselves
                 "Implementation-Title": archivesBaseName,
                 "Implementation-Version": "${mod_version}",
-                "Implementation-Vendor" :"PIPPIP5789",
+                "Implementation-Vendor" :"pippip5789",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "FMLCorePlugin": "com.PIPPIP5789.mfrex.mixin.MixinLoader",
+                "FMLCorePlugin": "com.pippip5789.mfrex.mixin.MixinLoader",
                 "FMLCorePluginContainsFMLMod": true
         ])
     }

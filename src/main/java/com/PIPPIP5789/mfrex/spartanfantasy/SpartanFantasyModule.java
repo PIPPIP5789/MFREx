@@ -1,7 +1,7 @@
-package com.PIPPIP5789.mfrex.spartanfantasy;
+package com.pippip5789.mfrex.spartanfantasy;
 
-import com.PIPPIP5789.mfrex.spartanfantasy.init.SpartanFantasyItemInit;
-import com.PIPPIP5789.mfrex.spartanfantasy.init.SpartanFantasyRecipeInit;
+import com.pippip5789.mfrex.spartanfantasy.init.SpartanFantasyItemInit;
+import com.pippip5789.mfrex.spartanfantasy.init.SpartanFantasyRecipeInit;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

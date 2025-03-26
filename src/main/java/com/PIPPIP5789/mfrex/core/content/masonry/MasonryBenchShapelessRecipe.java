@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.masonry;
 
 import minefantasy.mfr.constants.Skill;
 import minefantasy.mfr.util.CustomToolHelper;

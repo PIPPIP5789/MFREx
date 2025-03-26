@@ -1,10 +1,8 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
-import com.PIPPIP5789.mfrex.core.content.masonry.GuiMasonryBench;
-import com.PIPPIP5789.mfrex.core.content.masonry.TileEntityMasonryBench;
-import minefantasy.mfr.client.gui.GuiKitchenBench;
+import com.pippip5789.mfrex.core.content.masonry.GuiMasonryBench;
+import com.pippip5789.mfrex.core.content.masonry.TileEntityMasonryBench;
 import minefantasy.mfr.network.NetworkHandler;
-import minefantasy.mfr.tile.TileEntityKitchenBench;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +26,7 @@ public class MixinMFRNetworkHandler {
         if (tileEntity != null && ID == GUI_MASONRY_BENCH) {
             System.out.println("WAKADY");
             cir.setReturnValue(new GuiMasonryBench(((TileEntityMasonryBench)tileEntity).createContainer(player), (TileEntityMasonryBench)tileEntity));
-            cir.cancel();
+            
         }
     }
 
@@ -38,7 +36,7 @@ public class MixinMFRNetworkHandler {
         if (tileEntity != null) {
             if (ID == GUI_MASONRY_BENCH) {
                 cir.setReturnValue(((TileEntityMasonryBench)tileEntity).createContainer(player));
-                cir.cancel();
+                
             }
         }
     }

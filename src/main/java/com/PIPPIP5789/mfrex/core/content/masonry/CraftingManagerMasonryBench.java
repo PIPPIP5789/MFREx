@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.masonry;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,7 +14,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import minefantasy.mfr.MineFantasyReforged;
-import minefantasy.mfr.config.ConfigCrafting;
 import minefantasy.mfr.util.FileUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.JsonUtils;

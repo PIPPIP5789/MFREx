@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.masonry;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

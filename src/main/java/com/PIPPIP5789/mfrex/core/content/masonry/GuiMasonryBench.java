@@ -1,9 +1,7 @@
-package com.PIPPIP5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.masonry;
 
-import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
 import minefantasy.mfr.MineFantasyReforged;
 import minefantasy.mfr.container.ContainerBase;
-import minefantasy.mfr.init.MineFantasyBlocks;
 import minefantasy.mfr.util.GuiHelper;
 import minefantasy.mfr.util.TextureHelperMFR;
 import minefantasy.mfr.util.ToolHelper;

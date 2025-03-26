@@ -1,16 +1,10 @@
-package com.PIPPIP5789.mfrex.core.init;
+package com.pippip5789.mfrex.core.init;
 
-import com.PIPPIP5789.mfrex.core.content.masonry.BlockMasonryBench;
-import com.PIPPIP5789.mfrex.core.content.masonry.TileEntityMasonryBench;
-import minefantasy.mfr.util.Utils;
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class MFRExBlockInit {

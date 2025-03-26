@@ -1,12 +1,11 @@
-package com.PIPPIP5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.masonry;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import minefantasy.mfr.config.ConfigHardcore;
+
 import minefantasy.mfr.constants.Skill;
 import minefantasy.mfr.constants.Tool;
 import minefantasy.mfr.container.ContainerBase;
-import minefantasy.mfr.mechanics.RPGElements;
 import minefantasy.mfr.mechanics.knowledge.ResearchLogic;
 import minefantasy.mfr.recipe.IRecipeMFR;
 import minefantasy.mfr.tile.TileEntityBase;

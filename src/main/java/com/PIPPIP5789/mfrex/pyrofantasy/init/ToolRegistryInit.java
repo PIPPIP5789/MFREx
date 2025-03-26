@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.pyrofantasy.init;
+package com.pippip5789.mfrex.pyrofantasy.init;
 
 import com.codetaylor.mc.pyrotech.PyrotechAPI;
 import minefantasy.mfr.init.MineFantasyItems;

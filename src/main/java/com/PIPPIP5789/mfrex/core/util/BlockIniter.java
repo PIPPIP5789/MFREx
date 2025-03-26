@@ -1,7 +1,7 @@
-package com.PIPPIP5789.mfrex.core.util;
+package com.pippip5789.mfrex.core.util;
 
-import com.PIPPIP5789.mfrex.core.MFREx;
-import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
+import com.pippip5789.mfrex.core.MFREx;
+import com.pippip5789.mfrex.core.init.MFRExBlockInit;
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;

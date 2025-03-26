@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.core.util;
+package com.pippip5789.mfrex.core.util;
 
 import java.util.Random;
 

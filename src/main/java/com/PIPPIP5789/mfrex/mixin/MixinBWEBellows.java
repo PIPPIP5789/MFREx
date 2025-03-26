@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import betterwithmods.common.blocks.mechanical.BlockBellows;
 import com.oblivioussp.spartanweaponry.item.ItemLongbow;

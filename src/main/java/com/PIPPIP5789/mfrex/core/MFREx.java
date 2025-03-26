@@ -1,14 +1,14 @@
-package com.PIPPIP5789.mfrex.core;
+package com.pippip5789.mfrex.core;
 
 import betterwithmods.BWMod;
-import com.PIPPIP5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
-import com.PIPPIP5789.mfrex.core.init.MFRExBlockInit;
-import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
-import com.PIPPIP5789.mfrex.core.init.MFRExRecipeInit;
-import com.PIPPIP5789.mfrex.core.util.EventHandler;
-import com.PIPPIP5789.mfrex.pyrofantasy.PyroFantasyModule;
-import com.PIPPIP5789.mfrex.rusticatedfantasy.RusticatedFantasyModule;
-import com.PIPPIP5789.mfrex.rusticfantasy.RusticFantasyModule;
+import com.pippip5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
+import com.pippip5789.mfrex.core.init.MFRExBlockInit;
+import com.pippip5789.mfrex.core.init.MFRExItemInit;
+import com.pippip5789.mfrex.core.init.MFRExRecipeInit;
+import com.pippip5789.mfrex.core.util.EventHandler;
+import com.pippip5789.mfrex.pyrofantasy.PyroFantasyModule;
+import com.pippip5789.mfrex.rusticatedfantasy.RusticatedFantasyModule;
+import com.pippip5789.mfrex.rusticfantasy.RusticFantasyModule;
 import com.animania.Animania;
 import com.codetaylor.mc.pyrotech.ModPyrotech;
 import com.oblivioussp.spartanweaponry.ModSpartanWeaponry;
@@ -38,7 +38,7 @@ public class MFREx {
     @Mod.Instance(MODID)
     public static MFREx INSTANCE;
 
-    //@SidedProxy(clientSide = "com.PIPPIP5789.betterwithfantasy.proxy.ClientProxy", serverSide = "com.PIPPIP5789.betterwithfantasy.proxy.ServerProxy")
+    //@SidedProxy(clientSide = "com.pippip5789.betterwithfantasy.proxy.ClientProxy", serverSide = "com.pippip5789.betterwithfantasy.proxy.ServerProxy")
     //public static CommonProxy PROXY;
     //public ItemRegistry itemRegistry;
 

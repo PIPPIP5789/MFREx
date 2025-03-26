@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.core.content.food;
+package com.pippip5789.mfrex.core.content.food;
 
 import minefantasy.mfr.item.ItemFoodMFR;
 import net.minecraft.item.ItemStack;

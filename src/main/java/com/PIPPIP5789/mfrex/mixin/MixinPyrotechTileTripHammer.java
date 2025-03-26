@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.athenaeum.network.tile.ITileDataService;
 import com.codetaylor.mc.athenaeum.util.FacingHelper;
@@ -63,7 +63,7 @@ public abstract class MixinPyrotechTileTripHammer extends TileCogWorkerBase {
                 ((TileEntityAnvil) tileEntity).tryCraft(null, false);
 
                 cir.setReturnValue(1);
-                cir.cancel();
+                
             }
         }
     }

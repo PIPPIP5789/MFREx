@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.pyrotech.modules.tech.machine.tile.TileTripHammer;
 import minefantasy.mfr.constants.Tool;
@@ -78,7 +78,7 @@ public abstract class MixinMFRTileEntityAnvil extends TileEntityBase {
 
         if (anvilRecipe == null) {
             cir.setReturnValue(false);
-            cir.cancel();
+            
         }
 
         if(user == null) {
@@ -99,7 +99,7 @@ public abstract class MixinMFRTileEntityAnvil extends TileEntityBase {
                 if (tool != Tool.HAMMER && tool != Tool.HEAVY_HAMMER) {
                     this.updateCraftingData();
                     cir.setReturnValue(false);
-                    cir.cancel();
+                    
                 }
 
                 if (this.doesPlayerKnowCraft(user) && this.canCraft() && tool == anvilRecipe.getToolType()) {
@@ -134,7 +134,7 @@ public abstract class MixinMFRTileEntityAnvil extends TileEntityBase {
 
                 this.updateCraftingData();
                 cir.setReturnValue(true);
-                cir.cancel();
+                
             }
         }*/
     }

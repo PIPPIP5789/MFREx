@@ -1,6 +1,6 @@
-package com.PIPPIP5789.mfrex.rusticatedfantasy.init;
+package com.pippip5789.mfrex.rusticatedfantasy.init;
 
-import com.PIPPIP5789.mfrex.core.util.RecipeIniter;
+import com.pippip5789.mfrex.core.util.RecipeIniter;
 
 public class RusticatedFantasyRecipeInit extends RecipeIniter {
 

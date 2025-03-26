@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.rusticfantasy.init;
+package com.pippip5789.mfrex.rusticfantasy.init;
 
 import minefantasy.mfr.init.MineFantasyItems;
 import minefantasy.mfr.item.ItemFoodMFR;

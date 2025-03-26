@@ -1,31 +1,16 @@
-package com.PIPPIP5789.mfrex.spartanfantasy.init;
+package com.pippip5789.mfrex.spartanfantasy.init;
 
-import com.PIPPIP5789.mfrex.core.MFREx;
-import com.PIPPIP5789.mfrex.spartanfantasy.utils.SpartanFantasyMatConverter;
-import com.PIPPIP5789.mfrex.spartanfantasy.utils.SpartanFantasyUtils;
+import com.pippip5789.mfrex.core.MFREx;
+import com.pippip5789.mfrex.spartanfantasy.utils.SpartanFantasyMatConverter;
+import com.pippip5789.mfrex.spartanfantasy.utils.SpartanFantasyUtils;
 import com.oblivioussp.spartanweaponry.api.DamageHelper;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
-import com.oblivioussp.spartanweaponry.api.ToolMaterialEx;
 import com.oblivioussp.spartanweaponry.client.gui.CreativeTabsSW;
 import com.oblivioussp.spartanweaponry.init.ModelRenderRegistry;
 import com.oblivioussp.spartanweaponry.item.*;
-import minefantasy.mfr.init.MineFantasyItems;
-import minefantasy.mfr.item.ItemBattleaxe;
-import minefantasy.mfr.item.ItemFoodMFR;
-import minefantasy.mfr.item.ItemMultiFood;
-import minefantasy.mfr.item.ItemWeaponMFR;
-import minefantasy.mfr.material.BaseMaterial;
-import minefantasy.mfr.util.Utils;
-import net.minecraft.block.material.Material;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
-import rustic.common.items.ItemHerbEdible;
-import rustic.common.items.ModItems;
 
 import java.util.HashSet;
 import java.util.Set;

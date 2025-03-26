@@ -1,29 +1,14 @@
-package com.PIPPIP5789.mfrex.core.init;
+package com.pippip5789.mfrex.core.init;
 
-import com.PIPPIP5789.mfrex.core.util.RecipeIniter;
-import com.google.common.collect.Lists;
+import com.pippip5789.mfrex.core.util.RecipeIniter;
 import minefantasy.mfr.api.MineFantasyReforgedAPI;
 import minefantasy.mfr.config.ConfigCrafting;
 import minefantasy.mfr.config.ConfigHardcore;
 import minefantasy.mfr.init.MineFantasyBlocks;
-import minefantasy.mfr.init.MineFantasyItems;
-import minefantasy.mfr.recipe.DummyRecipe;
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistry;
-import panda.corn.init.ModItems;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.function.Predicate;
 
 public class MFRExRecipeInit extends RecipeIniter {
 

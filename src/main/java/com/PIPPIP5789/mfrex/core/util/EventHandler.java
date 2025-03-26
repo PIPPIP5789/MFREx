@@ -1,8 +1,5 @@
-package com.PIPPIP5789.mfrex.core.util;
+package com.pippip5789.mfrex.core.util;
 
-import com.PIPPIP5789.mfrex.core.content.food.ItemNBTFood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;

@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.athenaeum.util.SoundHelper;
 import com.codetaylor.mc.pyrotech.ModPyrotech;
@@ -96,12 +96,12 @@ public abstract class MixinPyrotechItemIgniterBase extends Item {
 
             ((EntityPlayer)player).getCooldownTracker().setCooldown(this, this.getCooldownTicks());
             cir.setReturnValue(stack);
-            cir.cancel();
+            
         }
         else {
             player.stopActiveHand();
             cir.setReturnValue(stack);
-            cir.cancel();
+            
         }
     }
 

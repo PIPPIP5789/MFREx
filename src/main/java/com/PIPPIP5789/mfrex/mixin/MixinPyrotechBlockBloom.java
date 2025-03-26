@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.athenaeum.interaction.spi.IBlockInteractable;
 import com.codetaylor.mc.athenaeum.interaction.spi.IInteraction;
@@ -27,11 +27,11 @@ public abstract class MixinPyrotechBlockBloom implements IBlockInteractable {
         if(player.getHeldItemMainhand().getItem() instanceof ItemTongs) {
             ((ItemTongs) player.getHeldItemMainhand().getItem()).onItemRightClick(world, player, hand);
             cir.setReturnValue(false);
-            cir.cancel();
+            
         }
 
         cir.setReturnValue(this.interact(IInteraction.EnumType.MouseClick, world, pos, state, player, hand, facing, hitX, hitY, hitZ));
-        cir.cancel();
+        
     }
 
 }

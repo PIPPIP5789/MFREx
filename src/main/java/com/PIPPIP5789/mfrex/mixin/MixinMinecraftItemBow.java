@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import minefantasy.mfr.item.ArrowType;
 import minefantasy.mfr.item.ItemArrowMFR;

@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.athenaeum.interaction.spi.IInteraction;
 import com.codetaylor.mc.pyrotech.modules.ignition.item.ItemIgniterBase;
@@ -32,18 +32,18 @@ public abstract class MixinPyrotechBlockBloomery {
             ItemStack heldItem = player.getHeldItemMainhand();
             if (heldItem.getItem() instanceof ItemIgniterBase) {
                 cir.setReturnValue(false);
-                cir.cancel();
+                
             }
         }
         System.out.println("Wala");
         if(player.getHeldItemMainhand().getItem() instanceof ItemTongs) {
             ((ItemTongs) player.getHeldItemMainhand().getItem()).onItemRightClick(world, player, hand);
             cir.setReturnValue(false);
-            cir.cancel();
+            
         }
 
         cir.setReturnValue(this.interact(com.codetaylor.mc.athenaeum.interaction.spi.IInteraction.EnumType.MouseClick, world, pos, state, player, hand, facing, hitX, hitY, hitZ));
-        cir.cancel();
+        
     }
 
 }

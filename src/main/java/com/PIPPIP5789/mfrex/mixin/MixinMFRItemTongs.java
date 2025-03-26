@@ -1,4 +1,4 @@
-package com.PIPPIP5789.mfrex.mixin;
+package com.pippip5789.mfrex.mixin;
 
 import com.codetaylor.mc.athenaeum.util.StackHelper;
 import com.codetaylor.mc.pyrotech.ModPyrotech;
@@ -50,19 +50,19 @@ public abstract class MixinMFRItemTongs extends ItemTool {
         RayTraceResult rayTraceResult = this.rayTrace(world, player, true);
         if (rayTraceResult == null) {
             cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, item));
-            cir.cancel();
+            
         }
         else {
             if (rayTraceResult.typeOfHit == RayTraceResult.Type.BLOCK) {
                 BlockPos pos = rayTraceResult.getBlockPos();
                 if (!world.canMineBlockBody(player, pos)) {
                     cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, item));
-                    cir.cancel();
+                    
                 }
 
                 if (!player.canPlayerEdit(pos, rayTraceResult.sideHit, item)) {
                     cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, item));
-                    cir.cancel();
+                    
                 }
 
                 if(Loader.isModLoaded(ModPyrotech.MOD_ID)) {
@@ -105,15 +105,14 @@ public abstract class MixinMFRItemTongs extends ItemTool {
                             player.entityDropItem(cooled, 0.0F);
                         }
                     }
-                    System.out.println("8");
 
                     cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, TongsHelper.clearHeldItem(item, player)));
-                    cir.cancel();
+                    
                 }
             }
 
             cir.setReturnValue(ActionResult.newResult(EnumActionResult.FAIL, item));
-            cir.cancel();
+            
         }
     }
 

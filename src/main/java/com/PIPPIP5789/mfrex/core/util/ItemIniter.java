@@ -1,10 +1,10 @@
-package com.PIPPIP5789.mfrex.core.util;
+package com.pippip5789.mfrex.core.util;
 
-import com.PIPPIP5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
-import com.PIPPIP5789.mfrex.core.MFREx;
-import com.PIPPIP5789.mfrex.core.init.MFRExItemInit;
-import com.PIPPIP5789.mfrex.rusticfantasy.init.RusticFantasyItemInit;
-import com.PIPPIP5789.mfrex.spartanfantasy.init.SpartanFantasyItemInit;
+import com.pippip5789.mfrex.betterwithfantasy.init.BetterWithFantasyItemInit;
+import com.pippip5789.mfrex.core.MFREx;
+import com.pippip5789.mfrex.core.init.MFRExItemInit;
+import com.pippip5789.mfrex.rusticfantasy.init.RusticFantasyItemInit;
+import com.pippip5789.mfrex.spartanfantasy.init.SpartanFantasyItemInit;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;

@@ -1,6 +1,6 @@
 package _temp.gui;
 
-import com.PIPPIP5789.mfrex.MFREx;
+import com.pippip5789.mfrex.MFREx;
 import _temp.init.MFRExBlocks;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
