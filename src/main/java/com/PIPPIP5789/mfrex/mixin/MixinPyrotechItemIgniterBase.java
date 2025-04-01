@@ -96,12 +96,10 @@ public abstract class MixinPyrotechItemIgniterBase extends Item {
 
             ((EntityPlayer)player).getCooldownTracker().setCooldown(this, this.getCooldownTicks());
             cir.setReturnValue(stack);
-            
         }
         else {
             player.stopActiveHand();
             cir.setReturnValue(stack);
-            
         }
     }
 

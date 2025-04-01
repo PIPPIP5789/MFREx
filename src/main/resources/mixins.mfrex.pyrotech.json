@@ -4,7 +4,16 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "mixins.minefantasyreforged.refmap.json",
   "mixins": [
-    "MixinMFRItemTongs"
+    "MixinMFRItemTongs",
+    "MixinMFRTongsHelper",
+    "MixinPyrotechBlockBloom",
+    "MixinPyrotechBlockBloomery",
+    "MixinPyrotechBlockCampfire",
+    "MixinPyrotechBlockCombustionWorkerStoneBase",
+    "MixinPyrotechBlockKilnPit",
+    "MixinPyrotechItemIgniterBase",
+    "MixinPyrotechTileSoakingPot",
+    "MixinPyrotechTileTripHammer"
   ],
   "client": [
   ],

@@ -32,18 +32,14 @@ public abstract class MixinPyrotechBlockBloomery {
             ItemStack heldItem = player.getHeldItemMainhand();
             if (heldItem.getItem() instanceof ItemIgniterBase) {
                 cir.setReturnValue(false);
-                
             }
         }
-        System.out.println("Wala");
         if(player.getHeldItemMainhand().getItem() instanceof ItemTongs) {
             ((ItemTongs) player.getHeldItemMainhand().getItem()).onItemRightClick(world, player, hand);
             cir.setReturnValue(false);
-            
         }
 
         cir.setReturnValue(this.interact(com.codetaylor.mc.athenaeum.interaction.spi.IInteraction.EnumType.MouseClick, world, pos, state, player, hand, facing, hitX, hitY, hitZ));
-        
     }
 
 }

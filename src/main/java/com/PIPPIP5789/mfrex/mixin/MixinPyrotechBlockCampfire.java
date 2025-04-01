@@ -30,7 +30,6 @@ public abstract class MixinPyrotechBlockCampfire {
             if(use > 0) {
                 igniteWithIgniterItem(world, pos, state, facing);
                 cir.setReturnValue(false);
-                
             }
         }
     }

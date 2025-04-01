@@ -50,23 +50,22 @@ public abstract class MixinMFRItemTongs extends ItemTool {
         RayTraceResult rayTraceResult = this.rayTrace(world, player, true);
         if (rayTraceResult == null) {
             cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, item));
-            
         }
         else {
             if (rayTraceResult.typeOfHit == RayTraceResult.Type.BLOCK) {
                 BlockPos pos = rayTraceResult.getBlockPos();
                 if (!world.canMineBlockBody(player, pos)) {
                     cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, item));
-                    
                 }
 
                 if (!player.canPlayerEdit(pos, rayTraceResult.sideHit, item)) {
                     cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, item));
-                    
                 }
 
                 if(Loader.isModLoaded(ModPyrotech.MOD_ID)) {
+                    System.out.println("Test 1");
                     if (world.getTileEntity(rayTraceResult.getBlockPos()) instanceof TileBloomery) {
+                        System.out.println("Test 2");
                         TongsHelper.trySetHeldItem(player.getHeldItemMainhand(), ItemHeated.createHotItem(((TileBloomery) world.getTileEntity(rayTraceResult.getBlockPos())).getOutputStackHandler().extractItem(0, 1, false), 1500));
                     }
                 }
@@ -107,12 +106,10 @@ public abstract class MixinMFRItemTongs extends ItemTool {
                     }
 
                     cir.setReturnValue(ActionResult.newResult(EnumActionResult.PASS, TongsHelper.clearHeldItem(item, player)));
-                    
                 }
             }
 
             cir.setReturnValue(ActionResult.newResult(EnumActionResult.FAIL, item));
-            
         }
     }
 

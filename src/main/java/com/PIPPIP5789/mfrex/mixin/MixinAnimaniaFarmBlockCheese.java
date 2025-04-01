@@ -19,7 +19,6 @@ public class MixinAnimaniaFarmBlockCheese {
     @Inject(method = "eatCheese", at = @At("HEAD"), remap = false, cancellable = true)
     public void eatCheese(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, CallbackInfoReturnable<Boolean> ci) {
         ci.setReturnValue(false);
-        ci.cancel();
     }
 
 }

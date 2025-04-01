@@ -31,7 +31,6 @@ public abstract class MixinPyrotechBlockBloom implements IBlockInteractable {
         }
 
         cir.setReturnValue(this.interact(IInteraction.EnumType.MouseClick, world, pos, state, player, hand, facing, hitX, hitY, hitZ));
-        
     }
 
 }

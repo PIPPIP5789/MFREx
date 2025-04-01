@@ -24,9 +24,7 @@ public class MixinMFRNetworkHandler {
         final TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
 
         if (tileEntity != null && ID == GUI_MASONRY_BENCH) {
-            System.out.println("WAKADY");
             cir.setReturnValue(new GuiMasonryBench(((TileEntityMasonryBench)tileEntity).createContainer(player), (TileEntityMasonryBench)tileEntity));
-            
         }
     }
 
@@ -36,7 +34,6 @@ public class MixinMFRNetworkHandler {
         if (tileEntity != null) {
             if (ID == GUI_MASONRY_BENCH) {
                 cir.setReturnValue(((TileEntityMasonryBench)tileEntity).createContainer(player));
-                
             }
         }
     }

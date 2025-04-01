@@ -41,6 +41,7 @@ public abstract class MixinMFRTongsHelper {
 
     @Inject(method = "trySetHeldItem", at = @At("HEAD"), remap = false, cancellable = true)
     private static void trySetHeldItem(ItemStack tongs, ItemStack item, CallbackInfoReturnable<Boolean> cir) {
+        System.out.println("Waka ->  " + tongs + " : " + item);
         if (!item.isEmpty() && TongsHelper.isHotItem(item)) {
             NBTTagCompound nbt = TongsHelper.getNBT(tongs);
             nbt.setBoolean("Held", true);
@@ -55,7 +56,7 @@ public abstract class MixinMFRTongsHelper {
         }
     }
 
-    /*@Inject(method = "isHotItem", at = @At("HEAD"), remap = false, cancellable = true)
+    @Inject(method = "isHotItem", at = @At("HEAD"), remap = false, cancellable = true)
     private static void isHotItem(ItemStack item, CallbackInfoReturnable<Boolean> cir) {
         if(item != null) {
             if (Loader.isModLoaded("pyrotech"))
@@ -64,6 +65,6 @@ public abstract class MixinMFRTongsHelper {
                 cir.setReturnValue(item.getItem() instanceof IHotItem ? ((IHotItem) item.getItem()).isHot(item) : false);
         }
         
-    }*/
+    }
 
 }

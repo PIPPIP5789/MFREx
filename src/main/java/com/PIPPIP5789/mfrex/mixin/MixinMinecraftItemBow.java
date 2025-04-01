@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ItemBow.class)
 public class MixinMinecraftItemBow {
 
-    @Inject(method = "isArrow", at = @At("HEAD"), remap = false, cancellable = true)
+    @Inject(method = "isArrow", at = @At("HEAD"), remap = true, cancellable = true)
     protected void isArrow(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(stack.getItem() instanceof ItemArrow || stack.getItem() instanceof ItemArrowMFR);
     }

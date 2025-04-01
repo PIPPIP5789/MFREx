@@ -8,10 +8,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class PyroFantasyModule {
 
     public static void preInit(FMLPreInitializationEvent event) {
-        ToolRegistryInit.registerHammers();
     }
 
     public static void init(FMLInitializationEvent event) {
+        ToolRegistryInit.registerHammers();
     }
 
     public static void postInit(FMLPostInitializationEvent event) {

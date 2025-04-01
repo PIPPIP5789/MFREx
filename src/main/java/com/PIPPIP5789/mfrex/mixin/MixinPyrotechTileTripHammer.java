@@ -63,7 +63,6 @@ public abstract class MixinPyrotechTileTripHammer extends TileCogWorkerBase {
                 ((TileEntityAnvil) tileEntity).tryCraft(null, false);
 
                 cir.setReturnValue(1);
-                
             }
         }
     }

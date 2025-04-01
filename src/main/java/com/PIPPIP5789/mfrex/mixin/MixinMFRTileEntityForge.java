@@ -36,7 +36,6 @@ public class MixinMFRTileEntityForge extends TileEntity {
             if ((tile instanceof IHeatUser && ((IHeatUser) tile).canAccept(this))) returnVal = true;
 
             cir.setReturnValue(returnVal);
-            
         }
     }
 
@@ -47,15 +46,12 @@ public class MixinMFRTileEntityForge extends TileEntity {
         if(Loader.isModLoaded(BWMod.MODID)) {
             if (under.getBlock() instanceof BlockFireStoked) {
                 cir.setReturnValue(700.0F);
-                
             }
             else if (under.getMaterial() == Material.FIRE) {
                 cir.setReturnValue(50.0F);
-                
             }
             else {
                 cir.setReturnValue(under.getMaterial() == Material.LAVA ? 100.0F : 0.0F);
-                
             }
         }
     }

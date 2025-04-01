@@ -37,7 +37,6 @@ public class MixinMFRTileEntityFirepit extends TileEntity {
             if ((tile instanceof IHeatUser && ((IHeatUser) tile).canAccept(this))) returnVal = true;
 
             cir.setReturnValue(returnVal);
-            
         }
     }
 

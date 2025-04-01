@@ -11,17 +11,7 @@
     "MixinMFRNetworkHandler",
     "MixinMFRTileEntityAnvil",
     "MixinMFRTileEntityFirepit",
-    "MixinMFRTileEntityForge",
-    "MixinMFRTongsHelper",
-    "MixinMinecraftItemBow",
-    "MixinPyrotechBlockBloom",
-    "MixinPyrotechBlockBloomery",
-    "MixinPyrotechBlockCampfire",
-    "MixinPyrotechBlockCombustionWorkerStoneBase",
-    "MixinPyrotechBlockKilnPit",
-    "MixinPyrotechItemIgniterBase",
-    "MixinPyrotechTileSoakingPot",
-    "MixinPyrotechTileTripHammer"
+    "MixinMFRTileEntityForge"
   ],
   "client": [
   ],

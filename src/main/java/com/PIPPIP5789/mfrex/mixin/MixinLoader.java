@@ -14,7 +14,7 @@ import java.util.Map;
 
 @SuppressWarnings("unused")
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-public class MixinLoader implements IEarlyMixinLoader, IFMLLoadingPlugin {
+public class MixinLoader implements ILateMixinLoader, IFMLLoadingPlugin {
 
     @Override
     public List<String> getMixinConfigs() {
@@ -29,12 +29,12 @@ public class MixinLoader implements IEarlyMixinLoader, IFMLLoadingPlugin {
 
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig) {
-        return mixinConfig.equals("mixins.mfrex.json");
+        return mixinConfig.equals("mixins.mfrex.json") || mixinConfig.equals("mixins.mfrex.pyrotech.json");
     }
 
     @Override
     public void onMixinConfigQueued(String mixinConfig) {
-        IEarlyMixinLoader.super.onMixinConfigQueued(mixinConfig);
+        ILateMixinLoader.super.onMixinConfigQueued(mixinConfig);
     }
 
     @Override

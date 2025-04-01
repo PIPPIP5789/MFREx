@@ -30,7 +30,6 @@ public abstract class MixinPyrotechBlockKilnPit {
             if(use > 0) {
                 igniteWithAdjacentIgniterBlock(world, pos, state, facing);
                 cir.setReturnValue(false);
-                
             }
         }
     }
