@@ -5,6 +5,7 @@
   "refmap": "mixins.minefantasyreforged.refmap.json",
   "mixins": [
     "MixinMFRItemTongs",
+    "MixinMFRTileEntityAnvil",
     "MixinMFRTongsHelper",
     "MixinPyrotechBlockBloom",
     "MixinPyrotechBlockBloomery",

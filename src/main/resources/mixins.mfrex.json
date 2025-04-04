@@ -9,7 +9,6 @@
     "MixinBWETileEntityCookingPot",
     "MixinMFRBlockFirepit",
     "MixinMFRNetworkHandler",
-    "MixinMFRTileEntityAnvil",
     "MixinMFRTileEntityFirepit",
     "MixinMFRTileEntityForge"
   ],
