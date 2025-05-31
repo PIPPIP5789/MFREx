@@ -54,7 +54,7 @@ public abstract class MixinPyrotechTileTripHammer extends TileCogWorkerBase {
 
         if (!toolItemStack.isEmpty()) {
             if (tileEntity instanceof TileEntityAnvil) {
-                if (toolItemStack.attemptDamageItem(1, RandomHelper.random(), (EntityPlayerMP) null)) {
+                if (((TileEntityAnvil) tileEntity).getRecipe() != null && toolItemStack.attemptDamageItem(1, RandomHelper.random(), (EntityPlayerMP) null)) {
                     this.world.playSound((EntityPlayer) null, (double) this.pos.getX(), (double) this.pos.getY(), (double) this.pos.getZ(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.75F, (float) (1.0 + Util.RANDOM.nextGaussian() * 0.4000000059604645));
                     toolItemStack.shrink(1);
                     getToolStackHandler().setStackInSlot(0, toolItemStack);

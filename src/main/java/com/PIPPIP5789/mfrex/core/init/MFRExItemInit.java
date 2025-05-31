@@ -1,6 +1,7 @@
 package com.pippip5789.mfrex.core.init;
 
 import minefantasy.mfr.init.MineFantasyItems;
+import minefantasy.mfr.item.ItemBlockBase;
 import minefantasy.mfr.item.ItemFoodMFR;
 import minefantasy.mfr.util.Utils;
 import net.minecraft.init.Items;
@@ -10,6 +11,8 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class MFRExItemInit {
+
+    //public static Item rawStrips = Utils.nullValue();
 
     /*public static Item rawBeefStrips = Utils.nullValue();
     public static Item cookedBeefStrips = Utils.nullValue();
@@ -87,6 +90,8 @@ public class MFRExItemInit {
     }
 
     public static void initItems() {
+        //rawStrips = new ItemFoodMFR("raw_strips", 2, 0.2F, true);
+
         /*rawBeefStrips = new ItemFoodMFR("raw_strips_beef", 2, 0.2F, true);
         cookedBeefStrips = new ItemFoodMFR("cooked_strips_beef", 5, 0.5F, true);
         rawPorkStrips = new ItemFoodMFR("raw_strips_pork", 2, 0.2F, true);
@@ -142,8 +147,8 @@ public class MFRExItemInit {
         rawWolfMince = new ItemFoodMFR("raw_mince_wolf", 2, 0.2F, true).setContainerItem(MineFantasyItems.CLAY_POT);
         cookedWolfMince = new ItemFoodMFR("cooked_mince_wolf", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);
         rawHorseMince = new ItemFoodMFR("raw_mince_horse", 2, 0.2F, true).setContainerItem(MineFantasyItems.CLAY_POT);
-        cookedHorseMince = new ItemFoodMFR("cooked_mince_horse", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);
-*/
+        cookedHorseMince = new ItemFoodMFR("cooked_mince_horse", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);*/
+
         //beefSandwich = new ItemFoodMFR("raw_mince_beef", 2, 0.2F, true).setContainerItem(MineFantasyItems.CLAY_POT);
         //beefSandwichBig = new ItemFoodMFR("cooked_mince_beef", 5, 0.5F, true).setContainerItem(MineFantasyItems.CLAY_POT);
 
@@ -166,7 +171,7 @@ public class MFRExItemInit {
 
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        //registry.register(new ItemBlockBase(MFRExBlockInit.masonryBench));
+        registry.register(new ItemBlockBase(MFRExBlockInit.masonryBench));
 
         /*registry.register(rawBeefStrips);
         registry.register(cookedBeefStrips);

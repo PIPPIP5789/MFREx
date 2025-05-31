@@ -17,10 +17,12 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import java.util.Iterator;
 
 public class MasonryBenchRecipeFactory {
+
     public MasonryBenchRecipeFactory() {
     }
 
     public MasonryBenchRecipeBase parse(JsonContext context, JsonObject json) {
+        System.out.println("PARSING MFREX");
         String type = JsonUtils.getString(json, "type");
         MasonryBenchRecipeType recipeType = MasonryBenchRecipeType.deserialize(type);
         switch (recipeType) {
@@ -53,10 +55,8 @@ public class MasonryBenchRecipeFactory {
             String tool_type = JsonUtils.getString(json, "tool_type", "none");
             int craft_time = JsonUtils.getInt(json, "craft_time", 0);
             int tool_tier = JsonUtils.getInt(json, "tool_tier", 0);
-            int block_tier = JsonUtils.getInt(json, "block_tier", -1);
-            int dirty_progress_amount = JsonUtils.getInt(json, "dirty_progress_amount", 0);
             ItemStack result = CraftingHelper.getItemStack(JsonUtils.getJsonObject(json, "result"), context);
-            return new MasonryBenchShapelessRecipe(result, ingredients, tool_tier, block_tier, craft_time, tool_type, (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(sound)), research, skill, skillXp, vanillaXp, dirty_progress_amount);
+            return new MasonryBenchShapelessRecipe(result, ingredients, tool_tier, -1, craft_time, tool_type, (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(sound)), research, skill, skillXp, vanillaXp);
         }
     }
 
@@ -70,10 +70,7 @@ public class MasonryBenchRecipeFactory {
         String tool_type = JsonUtils.getString(json, "tool_type", "none");
         int craft_time = JsonUtils.getInt(json, "craft_time", 0);
         int tool_tier = JsonUtils.getInt(json, "tool_tier", 0);
-        int block_tier = JsonUtils.getInt(json, "block_tier", -1);
-        int dirty_progress_amount = JsonUtils.getInt(json, "dirty_progress_amount", 1);
-        boolean shouldMirror = JsonUtils.getBoolean(json, "shouldMirror", true);
-        return new MasonryBenchShapedRecipe(recipe.getRecipeOutput(), recipe.getIngredients(), tool_tier, block_tier, craft_time, tool_type, (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(sound)), research, skill, skillXp, vanillaXp, dirty_progress_amount, shouldMirror, recipe.getRecipeWidth(), recipe.getRecipeHeight());
+        return new MasonryBenchShapedRecipe(recipe.getRecipeOutput(), recipe.getIngredients(), tool_tier, -1, craft_time, tool_type, (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(sound)), research, skill, skillXp, vanillaXp, true, recipe.getRecipeWidth(), recipe.getRecipeHeight());
     }
 
 }

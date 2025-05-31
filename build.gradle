@@ -188,9 +188,16 @@ dependencies {
     compileOnly fg.deobf("curse.maven:athenaeum-284350:4633750")
     compileOnly fg.deobf("curse.maven:dropt-284973:5405050")
     if (project.debug_pyrotech.toBoolean()) {
-        runtimeOnly fg.deobf("curse.maven:pyrotech-306676:4132140");
+        runtimeOnly fg.deobf("curse.maven:pyrotech-306676:4132140")
         runtimeOnly fg.deobf("curse.maven:athenaeum-284350:4633750")
         runtimeOnly fg.deobf("curse.maven:dropt-284973:5405050")
+    }
+
+    compileOnly fg.deobf("curse.maven:dynamic-sword-skills-api-453143:3225900")
+    compileOnly fg.deobf("curse.maven:dynamic-sword-skills-453143:3225885")
+    if(project.debug_dynamicswordskills) {
+        runtimeOnly fg.deobf("curse.maven:dynamic-sword-skills-api-453143:3225900")
+        runtimeOnly fg.deobf("curse.maven:dynamic-sword-skills-453143:3225885")
     }
 }
 

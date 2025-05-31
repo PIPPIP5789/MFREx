@@ -1,5 +1,8 @@
 package com.pippip5789.mfrex.core.init;
 
+import com.pippip5789.mfrex.core.content.masonry.BlockMasonryBench;
+import com.pippip5789.mfrex.core.content.masonry.TileEntityMasonryBench;
+import minefantasy.mfr.util.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -9,10 +12,10 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class MFRExBlockInit {
 
-    //public static BlockMasonryBench masonryBench = (BlockMasonryBench) Utils.nullValue();
+    public static BlockMasonryBench masonryBench = (BlockMasonryBench) Utils.nullValue();
 
     public static void initBlocks() {
-        //masonryBench = new BlockMasonryBench("masonry_bench");
+        masonryBench = new BlockMasonryBench("masonry_bench");
     }
 
     public static void register(RegistryEvent.Register<Block> event) {
@@ -20,8 +23,8 @@ public class MFRExBlockInit {
 
         IForgeRegistry<Block> registry = event.getRegistry();
 
-        //registry.register(masonryBench);
-        //registerTile(TileEntityMasonryBench.class, "masonry_bench_tile");
+        registry.register(masonryBench);
+        registerTile(TileEntityMasonryBench.class, "masonry_bench_tile");
     }
 
     private static void registerTile(Class<? extends TileEntity> teClass, String teId) {

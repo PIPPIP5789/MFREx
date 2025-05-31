@@ -71,7 +71,7 @@ public abstract class MixinMFRTileEntityAnvil extends TileEntityBase {
 
     @Inject(method = "tryCraft", at = @At("HEAD"), remap = false, cancellable = true)
     public void tryCraft(EntityPlayer user, boolean rightClick, CallbackInfoReturnable<Boolean> cir) {
-        /*AnvilRecipeBase anvilRecipe = null;
+        AnvilRecipeBase anvilRecipe = null;
         if (this.getRecipe() instanceof AnvilRecipeBase) {
             anvilRecipe = (AnvilRecipeBase)this.getRecipe();
         }
@@ -136,7 +136,7 @@ public abstract class MixinMFRTileEntityAnvil extends TileEntityBase {
                 cir.setReturnValue(true);
                 
             }
-        }*/
+        }
     }
 
     @Inject(method = "addXP", at = @At("HEAD"), remap = false, cancellable = true)

@@ -15,8 +15,8 @@ public class MasonryBenchShapedRecipe extends MasonryBenchRecipeBase {
     protected int height;
     protected boolean shouldMirror;
 
-    public MasonryBenchShapedRecipe(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int MasonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp, int dirtyProgressAmount, boolean shouldMirror, int width, int height) {
-        super(output, inputs, toolTier, MasonryBenchTier, craftTime, toolType, soundOfCraft, research, skillUsed, skillXp, vanillaXp, dirtyProgressAmount);
+    public MasonryBenchShapedRecipe(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int MasonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp, boolean shouldMirror, int width, int height) {
+        super(output, inputs, toolTier, MasonryBenchTier, craftTime, toolType, soundOfCraft, research, skillUsed, skillXp, vanillaXp);
         this.shouldMirror = shouldMirror;
         this.width = width;
         this.height = height;

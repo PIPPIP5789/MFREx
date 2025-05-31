@@ -2,6 +2,7 @@ package com.pippip5789.mfrex.core;
 
 import betterwithmods.BWMod;
 import com.pippip5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
+import com.pippip5789.mfrex.core.content.masonry.CraftingManagerMasonryBench;
 import com.pippip5789.mfrex.core.init.MFRExBlockInit;
 import com.pippip5789.mfrex.core.init.MFRExItemInit;
 import com.pippip5789.mfrex.core.init.MFRExRecipeInit;
@@ -33,7 +34,7 @@ import rustic.core.Rustic;
 public class MFREx {
     public static final String MODID = "mfrex";
     public static final String NAME = "MFREx";
-    public static final String VERSION = "2.2";
+    public static final String VERSION = "2.3";
 
     @Mod.Instance(MODID)
     public static MFREx INSTANCE;
@@ -41,6 +42,10 @@ public class MFREx {
     //@SidedProxy(clientSide = "com.pippip5789.betterwithfantasy.proxy.ClientProxy", serverSide = "com.pippip5789.betterwithfantasy.proxy.ServerProxy")
     //public static CommonProxy PROXY;
     //public ItemRegistry itemRegistry;
+
+    /*
+    Clearly the solution for this(for thaumcraft at least) is to make the wand/glove the recipe tool in an MFR type bench
+     */
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -80,6 +85,7 @@ public class MFREx {
         MinecraftForge.EVENT_BUS.register(this);
 
         MFRExItemInit.initOreDict();
+        CraftingManagerMasonryBench.loadRecipes();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
             //FantasyCornModule.init(event);

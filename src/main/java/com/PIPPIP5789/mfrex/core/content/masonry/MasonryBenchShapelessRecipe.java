@@ -14,8 +14,8 @@ import java.util.List;
 
 public class MasonryBenchShapelessRecipe extends MasonryBenchRecipeBase {
 
-    public MasonryBenchShapelessRecipe(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int MasonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp, int dirtyProgressAmount) {
-        super(output, inputs, toolTier, MasonryBenchTier, craftTime, toolType, soundOfCraft, research, skillUsed, skillXp, vanillaXp, dirtyProgressAmount);
+    public MasonryBenchShapelessRecipe(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int MasonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp) {
+        super(output, inputs, toolTier, MasonryBenchTier, craftTime, toolType, soundOfCraft, research, skillUsed, skillXp, vanillaXp);
     }
 
     public boolean matches(MasonryBenchCraftMatrix matrix, World world) {

@@ -25,9 +25,8 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
     protected final Skill skillUsed;
     protected Integer skillXp;
     protected float vanillaXp;
-    protected final int dirtyProgressAmount;
 
-    public MasonryBenchRecipeBase(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int MasonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp, int dirtyProgressAmount) {
+    public MasonryBenchRecipeBase(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int MasonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp) {
         this.output = output;
         this.inputs = inputs;
         this.toolTier = toolTier;
@@ -39,7 +38,6 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
         this.skillUsed = skillUsed;
         this.skillXp = skillXp;
         this.vanillaXp = vanillaXp;
-        this.dirtyProgressAmount = dirtyProgressAmount;
     }
 
     abstract boolean matches(MasonryBenchCraftMatrix var1, @Nonnull World var2);
@@ -98,10 +96,6 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
 
     public float getVanillaXp() {
         return this.vanillaXp;
-    }
-
-    public int getDirtyProgressAmount() {
-        return this.dirtyProgressAmount;
     }
 
     public int getWidth() {

@@ -136,6 +136,7 @@ public class CraftingManagerMasonryBench {
 
         while(recipeIterator.hasNext()) {
             MasonryBenchRecipeBase rec = (MasonryBenchRecipeBase)recipeIterator.next();
+            System.out.println("Waka " + rec.getName() + " : " + rec.getCraftingResult());
             if (rec.matches(matrix, world)) {
                 MasonryBenchRecipeBase = rec;
                 break;
