@@ -2,8 +2,8 @@
     "forge_marker": 1,
     "defaults": {
         "transform": "forge:default-block",
-        "model": "minefantasyreforged:kitchen_bench_andesite",
-        "textures": {"texture": "minefantasyreforged:blocks/kitchen_bench"}
+        "model": "mfrex:masonry_bench",
+        "textures": {"texture": "mfrex:blocks/masonry_bench"}
     },
     "variants": {
         "normal": [{}],

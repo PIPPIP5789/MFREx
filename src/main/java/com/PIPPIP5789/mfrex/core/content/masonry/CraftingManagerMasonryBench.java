@@ -152,7 +152,7 @@ public class CraftingManagerMasonryBench {
     }
 
     public static MasonryBenchRecipeBase getRecipeByName(String name, boolean isNullable) {
-        ResourceLocation resourceLocation = new ResourceLocation("minefantasyreforged:" + name);
+        ResourceLocation resourceLocation = new ResourceLocation("mfrex:" + name);
         if (!MASONRY_BENCH_RECIPES.containsKey(resourceLocation) && !isNullable) {
             MineFantasyReforged.LOG.error("Masonry Bench Recipe Registry does not contain recipe: {}", name);
         }
@@ -177,4 +177,9 @@ public class CraftingManagerMasonryBench {
         ResourceLocation recipeLocation = MASONRY_BENCH_RECIPES.getKey(recipe);
         return recipeLocation != null ? recipeLocation.getPath() : "";
     }
+
+    public static MasonryBenchRecipeBase getRecipeByResourceLocation(ResourceLocation resourceLocation) {
+        return MASONRY_BENCH_RECIPES.getValue(resourceLocation);
+    }
+
 }

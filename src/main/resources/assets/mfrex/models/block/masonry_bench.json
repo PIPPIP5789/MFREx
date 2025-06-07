@@ -1,7 +1,9 @@
 {
-	"credit": "Made by pippip5789, with Blockbench. Textures by Laniakea",
+	"credit": "Made by PIPPIP5789, with Blockbench. Textures by Laniakea",
 	"texture_size": [64, 64],
-	"textures": {"particle": "#texture"},
+	"textures": {
+		"particle": "#texture"
+	},
 	"elements": [
 		{
 			"name": "top",
@@ -94,7 +96,7 @@
 			}
 		},
 		{
-			"name": "wood",
+			"name": "stone",
 			"from": [6, 5, 5],
 			"to": [10, 9, 9],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [8.25, 19.5, 8.25]},
@@ -108,7 +110,7 @@
 			}
 		},
 		{
-			"name": "spoonHandle",
+			"name": "pickHandle",
 			"from": [1.75, 15.5, 2.5],
 			"to": [2.75, 16.499, 7.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [17, 13, 16]},
@@ -122,10 +124,10 @@
 			}
 		},
 		{
-			"name": "knifeHandle",
-			"from": [14, 15.5, 9],
-			"to": [17, 16.5, 10],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [17, 12.5, 16]},
+			"name": "pickEnd",
+			"from": [5, 15.5, 6.9],
+			"to": [8, 16.5, 7.9],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 12.5, 14]},
 			"faces": {
 				"north": {"uv": [0.5, 14, 1.25, 14.25], "rotation": 270, "texture": "#texture"},
 				"east": {"uv": [0.25, 14, 0.5, 14.25], "rotation": 270, "texture": "#texture"},
@@ -136,35 +138,21 @@
 			}
 		},
 		{
-			"name": "knifeBlade",
-			"from": [10, 15.5, 9],
-			"to": [14, 16.5, 11],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [17, 12.5, 16]},
+			"name": "pickEnd",
+			"from": [-3.9, 15.5, 8],
+			"to": [-0.9, 16.5, 9],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [-1, 12.5, 15]},
 			"faces": {
-				"north": {"uv": [0.5, 13.5, 1.5, 13.75], "rotation": 270, "texture": "#texture"},
-				"east": {"uv": [0, 13.5, 0.5, 13.75], "rotation": 270, "texture": "#texture"},
-				"south": {"uv": [2, 13.5, 3, 13.75], "rotation": 270, "texture": "#texture"},
-				"west": {"uv": [1.5, 13.5, 2, 13.75], "rotation": 90, "texture": "#texture"},
-				"up": {"uv": [1.5, 13.5, 0.5, 13], "rotation": 180, "texture": "#texture"},
-				"down": {"uv": [2.5, 13, 1.5, 13.5], "texture": "#texture"}
+				"north": {"uv": [0.5, 14, 1.25, 14.25], "rotation": 270, "texture": "#texture"},
+				"east": {"uv": [0.25, 14, 0.5, 14.25], "rotation": 270, "texture": "#texture"},
+				"south": {"uv": [1.5, 14, 2.25, 14.25], "rotation": 270, "texture": "#texture"},
+				"west": {"uv": [1.25, 14, 1.5, 14.25], "rotation": 90, "texture": "#texture"},
+				"up": {"uv": [1.25, 14, 0.5, 13.75], "rotation": 180, "texture": "#texture"},
+				"down": {"uv": [2, 13.75, 1.25, 14], "texture": "#texture"}
 			}
 		},
 		{
-			"name": "knifeBlade",
-			"from": [7.2748, 15.5, 12.32685],
-			"to": [8.2748, 16.499, 14.32685],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [7.7748, 15.9995, 13.32685]},
-			"faces": {
-				"north": {"uv": [1.5, 15, 1.75, 15], "rotation": 270, "texture": "#texture"},
-				"east": {"uv": [1.25, 15, 1.5, 15], "rotation": 270, "texture": "#texture"},
-				"south": {"uv": [1, 15, 1.25, 15], "rotation": 90, "texture": "#texture"},
-				"west": {"uv": [0.75, 15, 1, 15], "rotation": 270, "texture": "#texture"},
-				"up": {"uv": [1.25, 15, 1, 14.75], "rotation": 90, "texture": "#texture"},
-				"down": {"uv": [1.5, 14.75, 1.25, 15], "rotation": 90, "texture": "#texture"}
-			}
-		},
-		{
-			"name": "spoonEnd",
+			"name": "pickTop",
 			"from": [1.25, 15.5, 7.5],
 			"to": [3.25, 16.5, 9.5],
 			"rotation": {"angle": 0, "axis": "y", "origin": [17, 13, 16]},
@@ -206,7 +194,7 @@
 					"name": "decorations",
 					"origin": [8, 8, 8],
 					"color": 0,
-					"children": [6, 7, 8, 9, 10, 11]
+					"children": [6, 7, 8, 9, 10]
 				}
 			]
 		}

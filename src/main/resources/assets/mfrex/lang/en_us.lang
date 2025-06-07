@@ -89,7 +89,7 @@ item.jam_persimmon_roll.name=Persimmon Jam Roll
 item.fish_dinner.name=Fish Dinner
 
 tooltype.masonry_bench=Masonry Bench
-integration.jei.category.mfrex:masonry_bench=MineFantasy Masonry Bench
+integration.jei.category.mfrex:masonry=Masonry Bench
 tile.masonry_bench.name=Masonry Bench
 method.masonry_bench=Masonry Bench
 

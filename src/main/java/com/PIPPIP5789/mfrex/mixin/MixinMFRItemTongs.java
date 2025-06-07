@@ -63,9 +63,7 @@ public abstract class MixinMFRItemTongs extends ItemTool {
                 }
 
                 if(Loader.isModLoaded(ModPyrotech.MOD_ID)) {
-                    System.out.println("Test 1");
                     if (world.getTileEntity(rayTraceResult.getBlockPos()) instanceof TileBloomery) {
-                        System.out.println("Test 2");
                         TongsHelper.trySetHeldItem(player.getHeldItemMainhand(), ItemHeated.createHotItem(((TileBloomery) world.getTileEntity(rayTraceResult.getBlockPos())).getOutputStackHandler().extractItem(0, 1, false), 1500));
                     }
                 }

@@ -16,6 +16,7 @@ import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
 public class GuiMasonryBench extends GuiContainer {
+
 	private final TileEntityMasonryBench tile;
 	private  final MasonryBenchRecipeBase masonryBenchRecipe;
 	private final int regularXSize = 176;

@@ -4,10 +4,10 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "mixins.minefantasyreforged.refmap.json",
   "mixins": [
-    "MixinMFRNetworkHandler"
+    "MixinMFRBlockFirepit",
+    "MixinMFRTileEntityFirepit"
   ],
   "client": [
-    "MixinMineFantasyHUD"
   ],
   "minVersion": "0.8"
 }

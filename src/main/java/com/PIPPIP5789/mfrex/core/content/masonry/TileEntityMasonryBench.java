@@ -18,6 +18,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.capabilities.Capability;
@@ -31,6 +32,7 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
     public static final int HEIGHT = 4;
     public float progressMax;
     public float progress;
+    public int requiredToolTier;
     private ContainerMasonryBench syncMasonryBench;
     private MasonryBenchCraftMatrix craftMatrix;
     private String lastPlayerHit;
@@ -303,10 +305,14 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
 
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
+        //ResourceLocation resourceLocation = new ResourceLocation(nbt.getString("recipe"));
+        //this.setRecipe(CraftingManagerMasonryBench.get(resourceLocation));
+        this.setRecipe(CraftingManagerMasonryBench.getRecipeByName(nbt.getString("recipe"), true));
         this.tier = nbt.getInteger("tier");
         this.inventory.deserializeNBT(nbt.getCompoundTag("inventory"));
         this.progress = nbt.getFloat("progress");
         this.progressMax = nbt.getFloat("progress_max");
+        this.requiredToolTier = nbt.getInteger("tool_tier");
     }
 
     public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
@@ -315,8 +321,9 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
         nbt.setTag("inventory", this.inventory.serializeNBT());
         nbt.setFloat("progress", this.progress);
         nbt.setFloat("progress_max", this.progressMax);
+        nbt.setInteger("tool_tier", this.requiredToolTier);
         if (this.getRecipe() != null) {
-            nbt.setString("recipe", this.getRecipe().getName());
+            nbt.setString("recipe", CraftingManagerMasonryBench.getRecipeName((MasonryBenchRecipeBase) this.getRecipe()));//);this.getRecipe().getName());
         }
 
         return nbt;
@@ -330,4 +337,9 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
         return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.inventory) : super.getCapability(capability, facing);
     }
+
+    public int getToolTierNeeded() {
+        return this.requiredToolTier;
+    }
+
 }
