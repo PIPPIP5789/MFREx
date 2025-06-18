@@ -172,6 +172,7 @@ public class MFRExItemInit {
         IForgeRegistry<Item> registry = event.getRegistry();
 
         registry.register(new ItemBlockBase(MFRExBlockInit.masonryBench));
+        registry.register(new ItemBlockBase(MFRExBlockInit.tailorBench));
 
         /*registry.register(rawBeefStrips);
         registry.register(cookedBeefStrips);

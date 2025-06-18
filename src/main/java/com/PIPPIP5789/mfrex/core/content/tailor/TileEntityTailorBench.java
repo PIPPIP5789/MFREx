@@ -1,7 +1,4 @@
-package com.pippip5789.mfrex.core.content.masonry;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+package com.pippip5789.mfrex.core.content.tailor;
 
 import minefantasy.mfr.constants.Skill;
 import minefantasy.mfr.constants.Tool;
@@ -18,14 +15,16 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBench {
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+public class TileEntityTailorBench extends TileEntityBase implements ITailorBench {
 
     private int tier;
     public static final int WIDTH = 4;
@@ -33,19 +32,19 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
     public float progressMax;
     public float progress;
     public int requiredToolTier;
-    private ContainerMasonryBench syncMasonryBench;
-    private MasonryBenchCraftMatrix craftMatrix;
+    private ContainerTailorBench syncTailorBench;
+    private TailorBenchCraftMatrix craftMatrix;
     private String lastPlayerHit;
     public final ItemStackHandler inventory;
 
-    public TileEntityMasonryBench() {
+    public TileEntityTailorBench() {
         this.lastPlayerHit = "";
         this.inventory = this.createInventory();
-        this.setContainer(new ContainerMasonryBench(this));
+        this.setContainer(new ContainerTailorBench(this));
     }
 
     protected ItemStackHandler createInventory() {
-        return new ItemStackHandler(21);
+        return new ItemStackHandler(17);
     }
 
     public ItemStackHandler getInventory() {
@@ -53,11 +52,11 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
     }
 
     public ContainerBase createContainer(EntityPlayer player) {
-        return new ContainerMasonryBench(player, this);
+        return new ContainerTailorBench(player, this);
     }
 
     protected int getGuiId() {
-        return 16;
+        return 17;
     }
 
     public boolean isItemValidForSlot(int slot, ItemStack item) {
@@ -74,8 +73,8 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
     public boolean tryCraft(EntityPlayer user) {
         if (user == null) {
             return false;
-        } else if (this.getRecipe() != null && this.getRecipe() instanceof MasonryBenchRecipeBase) {
-            MasonryBenchRecipeBase MasonryBenchRecipe = (MasonryBenchRecipeBase)this.getRecipe();
+        } else if (this.getRecipe() != null && this.getRecipe() instanceof TailorBenchRecipeBase) {
+            TailorBenchRecipeBase TailorBenchRecipe = (TailorBenchRecipeBase)this.getRecipe();
             ItemStack held = user.getHeldItemMainhand();
             Tool tool = ToolHelper.getToolTypeFromStack(held);
             int toolTier = ToolHelper.getCrafterTier(held);
@@ -90,15 +89,15 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
                     held.damageItem(1, user);
                 }
 
-                if (this.doesPlayerKnowCraft(user) && this.canCraft(MasonryBenchRecipe) && tool == MasonryBenchRecipe.getToolType() && this.tier >= MasonryBenchRecipe.getMasonryBenchTier() && toolTier >= MasonryBenchRecipe.getToolTier()) {
-                    this.world.playSound((EntityPlayer)null, this.pos, this.getUseSound(MasonryBenchRecipe), SoundCategory.AMBIENT, 1.0F, 1.0F);
+                if (this.doesPlayerKnowCraft(user) && this.canCraft(TailorBenchRecipe) && tool == TailorBenchRecipe.getToolType() && this.tier >= TailorBenchRecipe.getTailorBenchTier() && toolTier >= TailorBenchRecipe.getToolTier()) {
+                    this.world.playSound((EntityPlayer)null, this.pos, this.getUseSound(TailorBenchRecipe), SoundCategory.AMBIENT, 1.0F, 1.0F);
                     if (user.swingProgress > 0.0F && (double)user.swingProgress <= 1.0) {
                         efficiency *= 0.5F - user.swingProgress;
                     }
 
                     this.progress += Math.max(0.2F, efficiency);
                     if (this.progress >= this.progressMax) {
-                        this.craftItem(user, MasonryBenchRecipe);
+                        this.craftItem(user, TailorBenchRecipe);
                     }
                 }
 
@@ -111,22 +110,22 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
         }
     }
 
-    private SoundEvent getUseSound(MasonryBenchRecipeBase MasonryBenchRecipe) {
-        if (MasonryBenchRecipe.getSound().toString().equalsIgnoreCase("engineering")) {
+    private SoundEvent getUseSound(TailorBenchRecipeBase TailorBenchRecipe) {
+        if (TailorBenchRecipe.getSound().toString().equalsIgnoreCase("engineering")) {
             if (this.world.rand.nextInt(5) == 0) {
                 return SoundEvents.UI_BUTTON_CLICK;
             } else {
                 return this.world.rand.nextInt(20) == 0 ? SoundEvents.BLOCK_WOODEN_DOOR_OPEN : SoundEvents.BLOCK_WOOD_STEP;
             }
         } else {
-            return MasonryBenchRecipe.getSound();
+            return TailorBenchRecipe.getSound();
         }
     }
 
-    private void craftItem(EntityPlayer user, MasonryBenchRecipeBase MasonryBenchRecipe) {
-        if (this.canCraft(MasonryBenchRecipe)) {
-            this.addXP(user, MasonryBenchRecipe);
-            ItemStack result = MasonryBenchRecipe.getCraftingResult().copy();
+    private void craftItem(EntityPlayer user, TailorBenchRecipeBase TailorBenchRecipe) {
+        if (this.canCraft(TailorBenchRecipe)) {
+            this.addXP(user, TailorBenchRecipe);
+            ItemStack result = TailorBenchRecipe.getCraftingResult().copy();
             int output = this.getOutputSlotNum();
             if (this.getInventory().getStackInSlot(output).isEmpty()) {
                 if (result.getMaxStackSize() == 1 && !this.lastPlayerHit.isEmpty()) {
@@ -226,31 +225,31 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
         return true;
     }
 
-    public MasonryBenchRecipeBase getResult() {
-        if (this.syncMasonryBench != null && this.craftMatrix != null) {
+    public TailorBenchRecipeBase getResult() {
+        if (this.syncTailorBench != null && this.craftMatrix != null) {
             for(int a = 0; a < this.getOutputSlotNum(); ++a) {
                 this.craftMatrix.setInventorySlotContents(a, this.getInventory().getStackInSlot(a));
             }
 
-            return CraftingManagerMasonryBench.findMatchingRecipe(this, this.craftMatrix, this.world);
+            return CraftingManagerTailorBench.findMatchingRecipe(this, this.craftMatrix, this.world);
         } else {
             return null;
         }
     }
 
     public String getResultName() {
-        if (!(this.getRecipe() instanceof MasonryBenchRecipeBase)) {
+        if (!(this.getRecipe() instanceof TailorBenchRecipeBase)) {
             return I18n.format("gui.no_project_set", new Object[0]);
         } else {
-            MasonryBenchRecipeBase MasonryBenchRecipe = (MasonryBenchRecipeBase)this.getRecipe();
-            return MasonryBenchRecipe.getCraftingResult().getDisplayName();
+            TailorBenchRecipeBase TailorBenchRecipe = (TailorBenchRecipeBase)this.getRecipe();
+            return TailorBenchRecipe.getCraftingResult().getDisplayName();
         }
     }
 
     public void updateCraftingData() {
-        if (!this.world.isRemote && (this.getRecipe() instanceof MasonryBenchRecipeBase || this.getRecipe() == null)) {
-            MasonryBenchRecipeBase oldRecipe = (MasonryBenchRecipeBase)this.getRecipe();
-            MasonryBenchRecipeBase newRecipe = this.getResult();
+        if (!this.world.isRemote && (this.getRecipe() instanceof TailorBenchRecipeBase || this.getRecipe() == null)) {
+            TailorBenchRecipeBase oldRecipe = (TailorBenchRecipeBase)this.getRecipe();
+            TailorBenchRecipeBase newRecipe = this.getResult();
             this.setRecipe(newRecipe);
             if (!this.canCraft(newRecipe) && this.progress > 0.0F) {
                 this.progress = 0.0F;
@@ -267,12 +266,12 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
 
     }
 
-    public boolean canCraft(MasonryBenchRecipeBase MasonryBenchRecipe) {
-        if (MasonryBenchRecipe == null) {
+    public boolean canCraft(TailorBenchRecipeBase TailorBenchRecipe) {
+        if (TailorBenchRecipe == null) {
             return false;
         }
         else {
-            return this.progressMax > 0.0F ? this.canFitResult(MasonryBenchRecipe.getCraftingResult()) : false;
+            return this.progressMax > 0.0F ? this.canFitResult(TailorBenchRecipe.getCraftingResult()) : false;
         }
     }
 
@@ -280,9 +279,9 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
         this.progressMax = (float)i;
     }
 
-    public void setContainer(ContainerMasonryBench container) {
-        this.syncMasonryBench = container;
-        this.craftMatrix = new MasonryBenchCraftMatrix(this, this.syncMasonryBench, 4, 4);
+    public void setContainer(ContainerTailorBench container) {
+        this.syncTailorBench = container;
+        this.craftMatrix = new TailorBenchCraftMatrix(this, this.syncTailorBench, 4, 4);
     }
 
     public int getProgressBar(int i) {
@@ -291,14 +290,14 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
 
     public boolean doesPlayerKnowCraft(EntityPlayer user) {
         IRecipeMFR recipe = this.getRecipe();
-        return recipe instanceof MasonryBenchRecipeBase && !recipe.getRequiredResearch().equals("none") ? ResearchLogic.getResearchCheck(user, ResearchLogic.getResearch(recipe.getRequiredResearch())) : true;
+        return recipe instanceof TailorBenchRecipeBase && !recipe.getRequiredResearch().equals("none") ? ResearchLogic.getResearchCheck(user, ResearchLogic.getResearch(recipe.getRequiredResearch())) : true;
     }
 
-    private void addXP(EntityPlayer smith, MasonryBenchRecipeBase MasonryBenchRecipe) {
-        if (!this.world.isRemote && MasonryBenchRecipe.getSkill() != Skill.NONE) {
+    private void addXP(EntityPlayer smith, TailorBenchRecipeBase TailorBenchRecipe) {
+        if (!this.world.isRemote && TailorBenchRecipe.getSkill() != Skill.NONE) {
             float baseXP = this.progressMax / 10.0F;
-            MasonryBenchRecipe.giveSkillXp(smith, (float)((int)baseXP + 1));
-            MasonryBenchRecipe.giveVanillaXp(smith, baseXP, 1);
+            TailorBenchRecipe.giveSkillXp(smith, (float)((int)baseXP + 1));
+            TailorBenchRecipe.giveVanillaXp(smith, baseXP, 1);
         }
 
     }
@@ -307,7 +306,7 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
         super.readFromNBT(nbt);
         //ResourceLocation resourceLocation = new ResourceLocation(nbt.getString("recipe"));
         //this.setRecipe(CraftingManagerTailorBench.get(resourceLocation));
-        this.setRecipe(CraftingManagerMasonryBench.getRecipeByName(nbt.getString("recipe"), true));
+        this.setRecipe(CraftingManagerTailorBench.getRecipeByName(nbt.getString("recipe"), true));
         this.tier = nbt.getInteger("tier");
         this.inventory.deserializeNBT(nbt.getCompoundTag("inventory"));
         this.progress = nbt.getFloat("progress");
@@ -323,7 +322,7 @@ public class TileEntityMasonryBench extends TileEntityBase implements IMasonryBe
         nbt.setFloat("progress_max", this.progressMax);
         nbt.setInteger("tool_tier", this.requiredToolTier);
         if (this.getRecipe() != null) {
-            nbt.setString("recipe", CraftingManagerMasonryBench.getRecipeName((MasonryBenchRecipeBase) this.getRecipe()));//);this.getRecipe().getName());
+            nbt.setString("recipe", CraftingManagerTailorBench.getRecipeName((TailorBenchRecipeBase) this.getRecipe()));//);this.getRecipe().getName());
         }
 
         return nbt;

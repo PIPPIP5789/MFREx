@@ -1,6 +1,5 @@
-package com.pippip5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.tailor;
 
-import javax.annotation.Nonnull;
 import minefantasy.mfr.constants.Skill;
 import minefantasy.mfr.constants.Tool;
 import minefantasy.mfr.recipe.IRecipeMFR;
@@ -11,13 +10,15 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<MasonryBenchRecipeBase> implements IRecipeMFR {
+import javax.annotation.Nonnull;
+
+public abstract class TailorBenchRecipeBase extends IForgeRegistryEntry.Impl<TailorBenchRecipeBase> implements IRecipeMFR {
     public static final int MAX_WIDTH = 4;
     public static final int MAX_HEIGHT = 4;
     protected ItemStack output;
     protected NonNullList<Ingredient> inputs;
     protected final int toolTier;
-    protected final int masonryBenchTier;
+    protected final int tailorBenchTier;
     protected final int craftTime;
     protected final Tool toolType;
     protected final SoundEvent soundOfCraft;
@@ -26,11 +27,11 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
     protected Integer skillXp;
     protected float vanillaXp;
 
-    public MasonryBenchRecipeBase(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int masonryBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp) {
+    public TailorBenchRecipeBase(ItemStack output, NonNullList<Ingredient> inputs, int toolTier, int tailorBenchTier, int craftTime, String toolType, SoundEvent soundOfCraft, String research, Skill skillUsed, int skillXp, float vanillaXp) {
         this.output = output;
         this.inputs = inputs;
         this.toolTier = toolTier;
-        this.masonryBenchTier = masonryBenchTier;
+        this.tailorBenchTier = tailorBenchTier;
         this.craftTime = craftTime;
         this.toolType = Tool.fromName(toolType);
         this.soundOfCraft = soundOfCraft;
@@ -40,14 +41,14 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
         this.vanillaXp = vanillaXp;
     }
 
-    abstract boolean matches(MasonryBenchCraftMatrix var1, @Nonnull World var2);
+    abstract boolean matches(TailorBenchCraftMatrix var1, @Nonnull World var2);
 
     public int getRecipeSize() {
         return 0;
     }
 
     public String getName() {
-        return CraftingManagerMasonryBench.getRecipeName(this);
+        return CraftingManagerTailorBench.getRecipeName(this);
     }
 
     public ItemStack getCraftingResult() {
@@ -66,8 +67,8 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
         return this.toolTier;
     }
 
-    public int getMasonryBenchTier() {
-        return this.masonryBenchTier;
+    public int getTailorBenchTier() {
+        return this.tailorBenchTier;
     }
 
     public Tool getToolType() {
@@ -78,7 +79,7 @@ public abstract class MasonryBenchRecipeBase extends IForgeRegistryEntry.Impl<Ma
         return this.soundOfCraft;
     }
 
-    public ItemStack getMasonryBenchRecipeOutput() {
+    public ItemStack getTailorBenchRecipeOutput() {
         return this.output;
     }
 

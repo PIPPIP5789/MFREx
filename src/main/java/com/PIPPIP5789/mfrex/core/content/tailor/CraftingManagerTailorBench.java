@@ -1,18 +1,9 @@
-package com.pippip5789.mfrex.core.content.masonry;
+package com.pippip5789.mfrex.core.content.tailor;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
 import minefantasy.mfr.MineFantasyReforged;
 import minefantasy.mfr.util.FileUtils;
 import net.minecraft.item.ItemStack;
@@ -29,32 +20,42 @@ import net.minecraftforge.registries.RegistryBuilder;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 
-public class CraftingManagerMasonryBench {
-    public static final String RECIPE_FOLDER_PATH = "/recipes_mfr/masonry_bench_recipes/";
-    public static final String CONFIG_RECIPE_DIRECTORY = "config/MineFantasyReforged/custom/recipes/masonry_bench_recipes/";
-    private static final IForgeRegistry<MasonryBenchRecipeBase> MASONRY_BENCH_RECIPES = (new RegistryBuilder()).setName(new ResourceLocation("minefantasyreforged", "masonry_bench_recipes")).setType(MasonryBenchRecipeBase.class).setMaxID(67108863).disableSaving().allowModification().create();
-    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().create();
-    private static final MasonryBenchRecipeFactory factory = new MasonryBenchRecipeFactory();
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
-    public CraftingManagerMasonryBench() {
+public class CraftingManagerTailorBench {
+    public static final String RECIPE_FOLDER_PATH = "/recipes_mfr/loom_recipes/";
+    public static final String CONFIG_RECIPE_DIRECTORY = "config/MineFantasyReforged/custom/recipes/loom_recipes/";
+    private static final IForgeRegistry<TailorBenchRecipeBase> Tailor_BENCH_RECIPES = (new RegistryBuilder()).setName(new ResourceLocation("minefantasyreforged", "loom_recipes")).setType(TailorBenchRecipeBase.class).setMaxID(67108863).disableSaving().allowModification().create();
+    private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().create();
+    private static final TailorBenchRecipeFactory factory = new TailorBenchRecipeFactory();
+
+    public CraftingManagerTailorBench() {
     }
 
     public static void init() {
     }
 
-    public static Collection<MasonryBenchRecipeBase> getRecipes() {
-        return MASONRY_BENCH_RECIPES.getValuesCollection();
+    public static Collection<TailorBenchRecipeBase> getRecipes() {
+        return Tailor_BENCH_RECIPES.getValuesCollection();
     }
 
     public static void loadRecipes() {
         ModContainer modContainer = Loader.instance().activeModContainer();
-        FileUtils.createCustomDataDirectory("config/MineFantasyReforged/custom/recipes/masonry_bench_recipes/");
+        FileUtils.createCustomDataDirectory("config/MineFantasyReforged/custom/recipes/loom_recipes/");
         Loader.instance().getActiveModList().forEach((m) -> {
-            CraftingHelper.loadFactories(m, "assets/" + m.getModId() + "/recipes_mfr/masonry_bench_recipes/", new CraftingHelper.FactoryLoader[]{CraftingHelper.CONDITIONS});
+            CraftingHelper.loadFactories(m, "assets/" + m.getModId() + "/recipes_mfr/loom_recipes/", new CraftingHelper.FactoryLoader[]{CraftingHelper.CONDITIONS});
         });
-        loadRecipes(modContainer, new File("config/MineFantasyReforged/custom/recipes/masonry_bench_recipes/"), "");
+        loadRecipes(modContainer, new File("config/MineFantasyReforged/custom/recipes/loom_recipes/"), "");
         Loader.instance().getActiveModList().forEach((m) -> {
-            loadRecipes(m, m.getSource(), "assets/" + m.getModId() + "/recipes_mfr/masonry_bench_recipes/");
+            loadRecipes(m, m.getSource(), "assets/" + m.getModId() + "/recipes_mfr/loom_recipes/");
         });
         Loader.instance().setActiveModContainer(modContainer);
     }
@@ -90,13 +91,13 @@ public class CraftingManagerMasonryBench {
                     JsonObject json = (JsonObject)JsonUtils.fromJson(GSON, reader, JsonObject.class);
                     String type = ctx.appendModId(JsonUtils.getString(json, "type"));
                     if (Loader.isModLoaded(mod.getModId())) {
-                        if (MasonryBenchRecipeType.getByNameWithModId(type, mod.getModId()) != MasonryBenchRecipeType.NONE) {
-                            MasonryBenchRecipeBase recipe = factory.parse(ctx, json);
+                        if (TailorBenchRecipeType.getByNameWithModId(type, mod.getModId()) != TailorBenchRecipeType.NONE) {
+                            TailorBenchRecipeBase recipe = factory.parse(ctx, json);
                             if (CraftingHelper.processConditions(json, "conditions", ctx)) {
                                 addRecipe(recipe, mod.getModId().equals("minefantasyreforged"), key);
                             }
                         } else {
-                            MineFantasyReforged.LOG.info("Skipping recipe {} of type {} because it's not a MFR Masonry Bench recipe", key, type);
+                            MineFantasyReforged.LOG.info("Skipping recipe {} of type {} because it's not a MFR Tailor Bench recipe", key, type);
                         }
                     } else {
                         MineFantasyReforged.LOG.info("Skipping recipe {} of type {} because it the mod it depends on is not loaded", key, type);
@@ -115,52 +116,52 @@ public class CraftingManagerMasonryBench {
         });
     }
 
-    public static void addRecipe(MasonryBenchRecipeBase recipe, boolean checkForExistence, ResourceLocation key) {
-        ItemStack itemStack = recipe.getMasonryBenchRecipeOutput();
-        //if (ConfigCrafting.isMasonryBenchItemCraftable(itemStack)) {
+    public static void addRecipe(TailorBenchRecipeBase recipe, boolean checkForExistence, ResourceLocation key) {
+        ItemStack itemStack = recipe.getTailorBenchRecipeOutput();
+        //if (ConfigCrafting.isTailorBenchItemCraftable(itemStack)) {
             NonNullList<ItemStack> subItems = NonNullList.create();
             recipe.setRegistryName(key);
             itemStack.getItem().getSubItems(itemStack.getItem().getCreativeTab(), subItems);
             if (subItems.stream().anyMatch((s) -> {
-                return recipe.getMasonryBenchRecipeOutput().isItemEqual(s);
-            }) && (!checkForExistence || !MASONRY_BENCH_RECIPES.containsKey(recipe.getRegistryName()))) {
-                MASONRY_BENCH_RECIPES.register(recipe);
+                return recipe.getTailorBenchRecipeOutput().isItemEqual(s);
+            }) && (!checkForExistence || !Tailor_BENCH_RECIPES.containsKey(recipe.getRegistryName()))) {
+                Tailor_BENCH_RECIPES.register(recipe);
             }
         //}
 
     }
 
-    public static MasonryBenchRecipeBase findMatchingRecipe(IMasonryBench MasonryBench, MasonryBenchCraftMatrix matrix, World world) {
-        Iterator<MasonryBenchRecipeBase> recipeIterator = getRecipes().iterator();
-        MasonryBenchRecipeBase MasonryBenchRecipeBase = null;
+    public static TailorBenchRecipeBase findMatchingRecipe(ITailorBench TailorBench, TailorBenchCraftMatrix matrix, World world) {
+        Iterator<TailorBenchRecipeBase> recipeIterator = getRecipes().iterator();
+        TailorBenchRecipeBase TailorBenchRecipeBase = null;
 
         while(recipeIterator.hasNext()) {
-            MasonryBenchRecipeBase rec = (MasonryBenchRecipeBase)recipeIterator.next();
+            TailorBenchRecipeBase rec = (TailorBenchRecipeBase)recipeIterator.next();
             if (rec.matches(matrix, world)) {
-                MasonryBenchRecipeBase = rec;
+                TailorBenchRecipeBase = rec;
                 break;
             }
         }
 
-        if (MasonryBenchRecipeBase != null) {
-            MasonryBench.setProgressMax(MasonryBenchRecipeBase.getCraftTime());
-            return MasonryBenchRecipeBase;
+        if (TailorBenchRecipeBase != null) {
+            TailorBench.setProgressMax(TailorBenchRecipeBase.getCraftTime());
+            return TailorBenchRecipeBase;
         } else {
             return null;
         }
     }
 
-    public static MasonryBenchRecipeBase getRecipeByName(String name, boolean isNullable) {
+    public static TailorBenchRecipeBase getRecipeByName(String name, boolean isNullable) {
         ResourceLocation resourceLocation = new ResourceLocation("mfrex:" + name);
-        if (!MASONRY_BENCH_RECIPES.containsKey(resourceLocation) && !isNullable) {
-            MineFantasyReforged.LOG.error("Masonry Bench Recipe Registry does not contain recipe: {}", name);
+        if (!Tailor_BENCH_RECIPES.containsKey(resourceLocation) && !isNullable) {
+            MineFantasyReforged.LOG.error("Loom Recipe Registry does not contain recipe: {}", name);
         }
 
-        return (MasonryBenchRecipeBase)MASONRY_BENCH_RECIPES.getValue(resourceLocation);
+        return (TailorBenchRecipeBase)Tailor_BENCH_RECIPES.getValue(resourceLocation);
     }
 
-    public static List<MasonryBenchRecipeBase> getRecipesByName(String... names) {
-        List<MasonryBenchRecipeBase> recipes = new ArrayList();
+    public static List<TailorBenchRecipeBase> getRecipesByName(String... names) {
+        List<TailorBenchRecipeBase> recipes = new ArrayList();
         String[] var2 = names;
         int var3 = names.length;
 
@@ -172,13 +173,13 @@ public class CraftingManagerMasonryBench {
         return recipes;
     }
 
-    public static String getRecipeName(MasonryBenchRecipeBase recipe) {
-        ResourceLocation recipeLocation = MASONRY_BENCH_RECIPES.getKey(recipe);
+    public static String getRecipeName(TailorBenchRecipeBase recipe) {
+        ResourceLocation recipeLocation = Tailor_BENCH_RECIPES.getKey(recipe);
         return recipeLocation != null ? recipeLocation.getPath() : "";
     }
 
-    public static MasonryBenchRecipeBase getRecipeByResourceLocation(ResourceLocation resourceLocation) {
-        return MASONRY_BENCH_RECIPES.getValue(resourceLocation);
+    public static TailorBenchRecipeBase getRecipeByResourceLocation(ResourceLocation resourceLocation) {
+        return Tailor_BENCH_RECIPES.getValue(resourceLocation);
     }
 
 }

@@ -2,6 +2,8 @@ package com.pippip5789.mfrex.mixin;
 
 import com.pippip5789.mfrex.core.content.masonry.GuiMasonryBench;
 import com.pippip5789.mfrex.core.content.masonry.TileEntityMasonryBench;
+import com.pippip5789.mfrex.core.content.tailor.GuiTailorBench;
+import com.pippip5789.mfrex.core.content.tailor.TileEntityTailorBench;
 import minefantasy.mfr.network.NetworkHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -18,6 +20,8 @@ public class MixinMFRNetworkHandler {
 
     @Unique
     private static final int GUI_MASONRY_BENCH = 16;
+    @Unique
+    private static final int GUI_TAILOR_BENCH = 17;
 
     @Inject(method = "getClientGuiElement", at = @At("HEAD"), remap = false, cancellable = true)
     public void getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z, CallbackInfoReturnable<Object> cir) {
@@ -25,6 +29,9 @@ public class MixinMFRNetworkHandler {
 
         if (tileEntity != null && ID == GUI_MASONRY_BENCH) {
             cir.setReturnValue(new GuiMasonryBench(((TileEntityMasonryBench)tileEntity).createContainer(player), (TileEntityMasonryBench)tileEntity));
+        }
+        else if (tileEntity != null && ID == GUI_TAILOR_BENCH) {
+            cir.setReturnValue(new GuiTailorBench(((TileEntityTailorBench)tileEntity).createContainer(player), (TileEntityTailorBench) tileEntity));
         }
     }
 
@@ -34,6 +41,9 @@ public class MixinMFRNetworkHandler {
         if (tileEntity != null) {
             if (ID == GUI_MASONRY_BENCH) {
                 cir.setReturnValue(((TileEntityMasonryBench)tileEntity).createContainer(player));
+            }
+            else if (ID == GUI_TAILOR_BENCH) {
+                cir.setReturnValue(((TileEntityTailorBench)tileEntity).createContainer(player));
             }
         }
     }

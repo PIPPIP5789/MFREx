@@ -93,6 +93,11 @@ integration.jei.category.mfrex:masonry=Masonry Bench
 tile.masonry_bench.name=Masonry Bench
 method.masonry_bench=Masonry Bench
 
+tooltype.tailor_bench=Loom
+integration.jei.category.mfrex:tailor=Loom
+tile.tailor_bench.name=Loom
+method.tailor_bench=Loom
+
 item.rustic.beeswax.name=Testing Name
 
 tile.bloomery.name=Empty Stone Shell

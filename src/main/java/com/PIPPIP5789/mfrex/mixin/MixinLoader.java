@@ -3,6 +3,8 @@ package com.pippip5789.mfrex.mixin;
 import betterwithmods.BWMod;
 import com.animania.Animania;
 import com.codetaylor.mc.pyrotech.ModPyrotech;
+import dynamicswordskills.DynamicSwordSkills;
+import minefantasy.mfr.item.ItemWeaponMFR;
 import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
@@ -37,13 +39,16 @@ public class MixinLoader implements ILateMixinLoader, IFMLLoadingPlugin {
         if(Loader.isModLoaded(BWMod.MODID) || Loader.isModLoaded(ModPyrotech.MOD_ID)) {
             ret.add("mixins.mfrex.bwe-pyrotech.json");
         }
+        if(Loader.isModLoaded("dynamicswordskills")) {
+            ret.add("mixins.mfrex.dynamicswordskills.json");
+        }
 
         return ret;
     }
 
     @Override
     public boolean shouldMixinConfigQueue(String mixinConfig) {
-        return mixinConfig.equals("mixins.mfrex.json") || mixinConfig.equals("mixins.mfrex.animania,json") || mixinConfig.equals("mixins.mfrex.betterwitheverything,json") || mixinConfig.equals("mixins.mfrex.pyrotech.json") || mixinConfig.equals("mixins.mfrex.bwe-pyrotech,json");
+        return mixinConfig.equals("mixins.mfrex.json") || mixinConfig.equals("mixins.mfrex.animania,json") || mixinConfig.equals("mixins.mfrex.betterwitheverything,json") || mixinConfig.equals("mixins.mfrex.pyrotech.json") || mixinConfig.equals("mixins.mfrex.bwe-pyrotech,json") || mixinConfig.equals("mixins.mfrex.dynamicswordskills.json");
     }
 
     @Override

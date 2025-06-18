@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "package": "com.pippip5789.mfrex.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.minefantasyreforged.refmap.json",
+  "mixins": [
+    "MixinItemWeaponMFR",
+    "MixinMFRItemDagger",
+    "MixinMFRItemGreatsword",
+    "MixinMFRItemKatana",
+    "MixinDSSArmorBreak",
+    "MixinDSSBackSlice",
+    "MixinDSSDash",
+    "MixinDSSEndingBlow",
+    "MixinDSSLeapingBlow",
+    "MixinDSSMortalDraw",
+    "MixinDSSParry",
+    "MixinDSSRisingCut",
+    "MixinDSSSpinAttack",
+    "MixinDSSSwordBeam",
+    "MixinDSSSwordBreak"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}

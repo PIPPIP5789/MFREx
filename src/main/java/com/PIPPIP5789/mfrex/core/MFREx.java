@@ -3,6 +3,7 @@ package com.pippip5789.mfrex.core;
 import betterwithmods.BWMod;
 import com.pippip5789.mfrex.betterwithfantasy.BetterWithFantasyModule;
 import com.pippip5789.mfrex.core.content.masonry.CraftingManagerMasonryBench;
+import com.pippip5789.mfrex.core.content.tailor.CraftingManagerTailorBench;
 import com.pippip5789.mfrex.core.init.MFRExBlockInit;
 import com.pippip5789.mfrex.core.init.MFRExItemInit;
 import com.pippip5789.mfrex.core.init.MFRExRecipeInit;
@@ -86,6 +87,7 @@ public class MFREx {
 
         MFRExItemInit.initOreDict();
         CraftingManagerMasonryBench.loadRecipes();
+        CraftingManagerTailorBench.loadRecipes();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
             //FantasyCornModule.init(event);
@@ -112,7 +114,7 @@ public class MFREx {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        MFRExRecipeInit.removeOldRecipes();
+        //MFRExRecipeInit.removeOldRecipes();
 
         if(Loader.isModLoaded(SimpleCorn.MODID)) {
             //FantasyCornModule.postInit(event);
